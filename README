@@ -1,5 +1,8 @@
 Full schema dump of the transmart schema using oracle's expdp data pump utility
-following schemas are included in the dmp file:
+This transmart database dump includes 3 GEO studies with clinical data in the dataset explorer
+and 7 GEO studies in the search tool.
+
+Following schemas are included in the dmp file:
 I2B2DEMODATA
 I2B2METADATA
 I2B2HIVE
@@ -12,3 +15,5 @@ BIOMART_USER
 TM_LZ
 TM_WZ
 TM_CZ
+
+

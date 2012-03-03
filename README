@@ -1,0 +1,14 @@
+Full schema dump of the transmart schema using oracle's expdp data pump utility
+following schemas are included in the dmp file:
+I2B2DEMODATA
+I2B2METADATA
+I2B2HIVE
+I2B2WORKDATA
+I2B2SAMPLEDATA
+DEAPP
+BIOMART
+SEARCHAPP
+BIOMART_USER
+TM_LZ
+TM_WZ
+TM_CZ

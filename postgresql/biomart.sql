@@ -2998,7 +2998,7 @@ BEGIN
   -- $Id$
   -- Creates uid for bio_experiment.
 
-  RETURN 'BJOD:' || coalesce(TO_CHAR(RECORD_ID), 'ERROR') || ':' || coalesce(BIO_CURATION_NAME, 'ERROR');
+  RETURN 'BJOD:' || coalesce(trim(TO_CHAR(RECORD_ID, '9999999999999999999')), 'ERROR') || ':' || coalesce(BIO_CURATION_NAME, 'ERROR');
 END;
 $body$
 LANGUAGE PLPGSQL;
@@ -3014,7 +3014,7 @@ BEGIN
   -- $Id$
   -- Creates uid for bio_experiment.
 
-  RETURN 'BJOS:' || coalesce(TO_CHAR(RECORD_ID), 'ERROR') || ':' || coalesce(BIO_CURATION_NAME, 'ERROR');
+  RETURN 'BJOS:' || coalesce(trim(TO_CHAR(RECORD_ID, '9999999999999999999')), 'ERROR') || ':' || coalesce(BIO_CURATION_NAME, 'ERROR');
 END;
 $body$
 LANGUAGE PLPGSQL;
@@ -3023,10 +3023,10 @@ alter function biomart.BIO_JUB_ONCOL_SUM_DATA_UID(bigint, text) owner to biomart
 
 
 CREATE OR REPLACE FUNCTION biomart.CUM_NORMAL_DIST ( 
-  foldChg IN bigint, 
-  mu IN bigint, 
-  sigma IN bigint
-)  RETURNS bigint AS $body$
+  foldChg IN decimal, 
+  mu IN decimal, 
+  sigma IN decimal
+)  RETURNS decimal AS $body$
 DECLARE
 
  -------------------------------------------------------------------------------
@@ -3038,29 +3038,29 @@ DECLARE
   -------------------------------------------------------------------------------
 
   -- temporary vars  
-  t1 bigint;
+  t1 decimal;
   
   -- fractional error dist input
-  fract_error_input bigint;
+  fract_error_input decimal;
   
   -- return result (i.e. Prob [X<=x])
-  ans bigint;  
+  ans decimal;  
 
 
 BEGIN
   t1:= (foldChg-mu)/sigma;  
   fract_error_input:= t1/SQRT(2);
-  ans:= 0.5 * (1.0 + fract_error_dist(fract_error_input));
+  ans:= 0.5 * (1.0 + biomart.fract_error_dist(fract_error_input));
   return ans; 
 END;
 $body$
 LANGUAGE PLPGSQL;
-alter function biomart.CUM_NORMAL_DIST(bigint, bigint, bigint) owner to biomart;
+alter function biomart.CUM_NORMAL_DIST(decimal, decimal, decimal) owner to biomart;
 
 
 
-CREATE OR REPLACE FUNCTION biomart.FRACT_ERROR_DIST ( normInput IN bigint
-)  RETURNS bigint AS $body$
+CREATE OR REPLACE FUNCTION biomart.FRACT_ERROR_DIST ( normInput IN decimal
+)  RETURNS decimal AS $body$
 DECLARE
 
 
@@ -3069,34 +3069,34 @@ DECLARE
   -- JWS@20090601 - First rev.
   -------------------------------------------------------------------------------
   -- temp var
-  t1 bigint:= 1.0 / (1.0 + 0.5 * ABS(normInput));
+  t1 decimal:= 1.0 / (1.0 + 0.5 * ABS(normInput));
   
   -- exponent input to next equation
-  exponent_input bigint:= -normInput*normInput - 1.26551223 + 
+  exponent_input decimal:= -normInput*normInput - 1.26551223 + 
                            t1*(1.00002368 + t1*(0.37409196 + t1*(0.09678418 + t1*(-0.18628806 + t1*(0.27886807 + t1*(-1.13520398 + t1*(1.48851587 + t1*(-0.82215223 + t1*(0.17087277)))))))));
   -- Horner's method
-  ans bigint:= 1 - t1 * EXP(exponent_input);
+  ans decimal:= 1 - t1 * EXP(exponent_input);
 
-  fractError bigint;
+  fractError decimal;
 
 
 BEGIN
   -- handle sign
-  IF normInput>0 THEN fractError:= ans; ELSE fractError:= -ans; END IF;
+  IF normInput>0.0 THEN fractError:= ans; ELSE fractError:= -ans; END IF;
   return fractError;
 
 END;
 $body$
 LANGUAGE PLPGSQL;
-alter function biomart.FRACT_ERROR_DIST(bigint) owner to biomart;
+alter function biomart.FRACT_ERROR_DIST(decimal) owner to biomart;
 
 
 
 CREATE OR REPLACE FUNCTION biomart.TEA_NPV_PRECOMPUTE ( 
-  foldChg IN bigint, 
-  mu IN bigint, 
-  sigma IN bigint
-)  RETURNS bigint AS $body$
+  foldChg IN decimal, 
+  mu IN decimal, 
+  sigma IN decimal
+)  RETURNS decimal AS $body$
 DECLARE
 
 
@@ -3108,8 +3108,8 @@ DECLARE
   -- param mu: mean of all analsyis_data records for a given analysis
   -- param sigma: std dev of all analsyis_data records for a given analysis
   -------------------------------------------------------------------------------
-  npv bigint;
-  outlier_cutoff bigint:=1.0e-5;
+  npv decimal;
+  outlier_cutoff decimal:=1.0e-5;
   
 
 BEGIN
@@ -3124,7 +3124,7 @@ BEGIN
 END;
 $body$
 LANGUAGE PLPGSQL;
-alter function biomart.TEA_NPV_PRECOMPUTE(bigint, bigint, bigint) owner to biomart;
+alter function biomart.TEA_NPV_PRECOMPUTE(decimal, decimal, decimal) owner to biomart;
 
 
 

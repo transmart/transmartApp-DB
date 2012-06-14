@@ -1544,6 +1544,8 @@ ALTER TABLE biomart.bio_lit_alt_data ADD CONSTRAINT bio_lit_alt_ref_fk FOREIGN K
 ALTER TABLE biomart.bio_data_taxonomy ADD CONSTRAINT bio_taxon_fk FOREIGN KEY (bio_taxonomy_id) REFERENCES biomart.bio_taxonomy (bio_taxonomy_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_data_correlation ADD CONSTRAINT bio_marker_link_bio_marker_rel FOREIGN KEY (bio_data_correl_descr_id) REFERENCES biomart.bio_data_correl_descr (bio_data_correl_descr_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_assay_analysis_data_tea ADD CONSTRAINT bio_assay_analysis_data_t_fk1 FOREIGN KEY (bio_assay_analysis_id) REFERENCES biomart.bio_assay_analysis (bio_assay_analysis_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE biomart.bio_assay_analysis_data_tea ADD CONSTRAINT bio_assay_analysis_data_t_fk2 FOREIGN KEY (bio_experiment_id) REFERENCES biomart.bio_experiment (bio_experiment_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE biomart.bio_assay_analysis_data_tea ADD CONSTRAINT bio_assay_analysis_data_t_fk3 FOREIGN KEY (bio_assay_platform_id) REFERENCES biomart.bio_assay_platform (bio_assay_platform_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 ALTER TABLE biomart.bio_assay_analysis_data_tea ADD CONSTRAINT bio_asy_ad_tea_fg_fk FOREIGN KEY (bio_assay_feature_group_id) REFERENCES biomart.bio_assay_feature_group (bio_assay_feature_group_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_asy_analysis_dataset ADD CONSTRAINT bio_data_anl_ds_anl_fk FOREIGN KEY (bio_assay_analysis_id) REFERENCES biomart.bio_assay_analysis (bio_assay_analysis_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
@@ -1578,6 +1580,8 @@ ALTER TABLE biomart.bio_assay_sample ADD CONSTRAINT bio_assay_sample_bio_sample_
 ALTER TABLE biomart.bio_assay_sample ADD CONSTRAINT bio_assay_sample_bio_assay_fk FOREIGN KEY (bio_assay_id) REFERENCES biomart.bio_assay (bio_assay_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_curation_dataset ADD CONSTRAINT bio_ext_anl_pltfm_fk FOREIGN KEY (bio_asy_analysis_pltfm_id) REFERENCES biomart.bio_asy_analysis_pltfm (bio_asy_analysis_pltfm_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_assay_analysis_data ADD CONSTRAINT bio_assay_analysis_data_n_fk1 FOREIGN KEY (bio_assay_analysis_id) REFERENCES biomart.bio_assay_analysis (bio_assay_analysis_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE biomart.bio_assay_analysis_data ADD CONSTRAINT bio_assay_analysis_data_n_fk2 FOREIGN KEY (bio_experiment_id) REFERENCES biomart.bio_experiment (bio_experiment_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE biomart.bio_assay_analysis_data ADD CONSTRAINT bio_assay_analysis_data_n_fk3 FOREIGN KEY (bio_assay_platform_id) REFERENCES biomart.bio_assay_platform (bio_assay_platform_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 ALTER TABLE biomart.bio_assay_analysis_data ADD CONSTRAINT bio_asy_ad_fg_fk FOREIGN KEY (bio_assay_feature_group_id) REFERENCES biomart.bio_assay_feature_group (bio_assay_feature_group_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;
 ALTER TABLE biomart.bio_clinical_trial ADD CONSTRAINT bio_clinical_trial_bio_experim FOREIGN KEY (bio_experiment_id) REFERENCES biomart.bio_experiment (bio_experiment_id) ON DELETE NO ACTION NOT DEFERRABLE INITIALLY IMMEDIATE;

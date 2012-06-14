@@ -1,0 +1,93 @@
+Prior to executing the scripts:
+a.  In biomart/prerequisites.sql, update the locations of the 2 tablespaces to be created BIOMART and INDX.  Verify that these directories exist with proper permissions.  
+
+The biomart schema can be created thru either the dump file or the raw scripts. 
+
+Using dump file:
+a.  execute SQL in preqrequisites file by rrunning script or running the commands manually
+b.  execute pg_restore command:
+     pg_restore -d transmart biomart.pgdump.tar
+
+OR 
+
+Using scripts:
+b.  In biomart/start.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+b.  From biomart folder, execute the start.sh script
+     sh ./start.sh
+
+
+Verification - After completing either 1 or 2, verify the counts of the tables by running the SQL in check_counts.sql.  Following are the expected row counts for each table:
+
+BIO_ASSAY_FEATURE_GROUP	237002 
+BIO_ASSAY_ANALYSIS_DATA	184538 
+BIO_DATA_EXT_CODE	134965 
+BIO_DATA_UID	126764 
+BIO_ASSAY_DATA_ANNOTATION	104960 
+BIO_MARKER	100171 
+bio_marker_correl_mv        100171 
+BIO_DATA_OMIC_MARKER	78821 
+BIO_DISEASE	26581 
+BIO_ASSAY_ANALYSIS_DATA_TEA	13140 
+TMP_ANALYSIS_DATA_TEA_RANK	5605 
+BIO_CONCEPT_CODE	50 
+BIO_ASSAY_PLATFORM	34 
+BIO_DATA_DISEASE	27 
+BIO_ASSAY_DATASET	19 
+BIO_ASSAY_ANALYSIS	12 
+BIO_CONTENT	7 
+BIO_EXPERIMENT	7 
+BIO_CONTENT_REFERENCE	7 
+BIO_TAXONOMY	1 
+BIO_CONTENT_REPOSITORY	1 
+BIO_ASY_ANALYSIS_PLTFM	1 
+BIO_CLINICAL_TRIAL	0
+BIO_CLINICAL_TRIAL_DESIGN	0
+BIO_COMPOUND	0
+BIO_CURATED_DATA	0
+BIO_CURATION_DATASET	0
+BIO_DATA_ATTRIBUTE	0
+BIO_DATA_COMPOUND	0
+BIO_DATA_CORRELATION	0
+BIO_DATA_CORREL_DESCR	0
+BIO_DATA_LITERATURE	0
+CTD_STUDY	0
+BIO_LIT_ALT_DATA	0
+BIO_LIT_AMD_DATA	0
+BIO_LIT_INH_DATA	0
+BIO_LIT_INT_DATA	0
+BIO_LIT_MODEL_DATA	0
+BIO_LIT_PE_DATA	0
+BIO_LIT_REF_DATA	0
+BIO_LIT_SUM_DATA	0
+BIO_PATIENT	0
+BIO_PATIENT_EVENT	0
+BIO_PATIENT_EVENT_ATTR	0
+BIO_SAMPLE	0
+BIO_STATS_EXP_MARKER	0
+BIO_SUBJECT	0
+CTD2_CLIN_INHIB_EFFECT	0
+CTD2_DISEASE	0
+CTD2_INHIB_DETAILS	0
+CTD2_STUDY	0
+CTD2_TRIAL_DETAILS	0
+CTD_ALLOWED_MEDS_TREATMENT	0
+CTD_BIOMARKER	0
+CTD_DISEASE	0
+CTD_DRUG_INHIB	0
+CTD_FULL	0
+CTD_INCLUSION_CRITERIA	0
+CTD_PRIMARY_ENDPTS	0
+CTD_SEC_ENDPTS	0
+BIO_CLINC_TRIAL_TIME_PT	0
+BIO_CLINC_TRIAL_PT_GROUP	0
+BIO_CLINC_TRIAL_ATTR	0
+BIO_CGDCP_DATA	0
+BIO_CELL_LINE	0
+BIO_ASY_DATA_STATS_ALL	0
+BIO_ASY_ANALYSIS_DATASET	0
+BIO_ASSAY_SAMPLE	0
+BIO_ASSAY_DATA_STATS	0
+BIO_ASSAY_DATA	0
+BIO_ASSAY	0
+BIO_DATA_TAXONOMY	0
+bio_lit_int_model_mv        0

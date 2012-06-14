@@ -1,0 +1,1 @@
+Insert into biomart.BIO_CONTENT_REPOSITORY (BIO_CONTENT_REPO_ID,LOCATION,ACTIVE_Y_N,REPOSITORY_TYPE,LOCATION_TYPE) values (724910,'http://www.ncbi.nlm.nih.gov/','Y','NCBI','URL');

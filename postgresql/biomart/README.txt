@@ -1,5 +1,5 @@
 Prior to executing the scripts:
-a. Create transmartdb database if does not exist
+a. Create transmart database if does not exist
 b. In biomart/prerequisites.sql, update the locations of the 2 tablespaces to be created BIOMART and INDX.  Verify that these directories exist with proper permissions.  
 
 The biomart schema can be created thru either the dump file or the raw scripts. 

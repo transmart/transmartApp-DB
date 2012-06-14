@@ -1,5 +1,5 @@
 Prior to executing the scripts:
-a. Create transmartdb database if does not exist 
+a. Create transmart database if does not exist 
 b. In searchapp/prerequisites.sql, update the locations of the tablespace to be created SEARCH_APP.  Verify that these directories exist with proper permissions.  
 
 The searchapp schema can be created thru either the dump file or the raw scripts. 

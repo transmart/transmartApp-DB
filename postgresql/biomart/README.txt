@@ -1,17 +1,18 @@
 Prior to executing the scripts:
-a.  In biomart/prerequisites.sql, update the locations of the 2 tablespaces to be created BIOMART and INDX.  Verify that these directories exist with proper permissions.  
+a. Create transmartdb database if does not exist
+b. In biomart/prerequisites.sql, update the locations of the 2 tablespaces to be created BIOMART and INDX.  Verify that these directories exist with proper permissions.  
 
 The biomart schema can be created thru either the dump file or the raw scripts. 
 
 Using dump file:
-a.  execute SQL in preqrequisites file by rrunning script or running the commands manually
+a.  execute SQL in preqrequisites file by running script or running the commands manually
 b.  execute pg_restore command:
      pg_restore -d transmart biomart.pgdump.tar
 
 OR 
 
 Using scripts:
-b.  In biomart/start.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+a.  In biomart/start.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
 b.  From biomart folder, execute the start.sh script
      sh ./start.sh
 

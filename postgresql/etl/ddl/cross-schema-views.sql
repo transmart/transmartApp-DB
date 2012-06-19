@@ -69,7 +69,7 @@ group by
   d.test_sub_category2,
   c.version_name;
  */
- /*
+
 CREATE OR REPLACE VIEW tm_cz.czv_pivot_sample_categories (trial_cd, sample_id, trial_name, pathology, race, tissue_type, gender, biomarker, access_type, institution, program_initiative, organism) AS SELECT  x.trial_cd
       ,x.sample_cd as sample_id			--	RDC tranSMART
 	  ,x.trial_name
@@ -116,7 +116,7 @@ CREATE OR REPLACE VIEW tm_cz.czv_pivot_sample_categories (trial_cd, sample_id, t
 			--,p.patient_num
 			,f.c_name 
 ) x;
-*/
+
 /*
 CREATE OR REPLACE VIEW tm_cz.last_test_detail_view (run_id, test_id, run_name, tab, col, category, sub_category1, sub_category2, sql, start_date, end_date, status, test_severity_cd, act_record_cnt, min_value_allowed, max_value_allowed, error_code, error_message) AS SELECT 
   a.test_run_id RUN_ID,

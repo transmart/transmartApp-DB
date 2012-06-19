@@ -4,6 +4,8 @@ a. Create transmart database if does not exist
 b. If TRANSMART and/or INDX tablespaces do not exist:
    In etl/prerequisites.sql, update the locations of the tablespaces to be created TRANSMART and INDX.  Verify that these directories exist with proper permissions.
    
+c.  create user biomart_user if does not exist
+   
 Comment out the line(s) in etl/prerequisites.sql for the index creation(s) if they already exist.     
 
 --------------------

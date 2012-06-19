@@ -98,10 +98,10 @@ CREATE OR REPLACE VIEW tm_cz.czv_pivot_sample_categories (trial_cd, sample_id, t
 		   ,max((CASE WHEN s.category_cd='PROGRAM/INITIATIVE' THEN s.category_value ELSE null END)) as PROGRAM_INITIATIVE
 		   ,max((CASE WHEN s.category_cd='ORGANISM' THEN s.category_value ELSE null END)) as ORGANISM
 	 from tm_lz.lz_src_sample_categories s
-		,i2b2_metadata.i2b2 f		
+		,i2b2metadata.i2b2 f		
 		--,patient_dimension p
 	 where s.trial_cd = f.sourcesystem_cd
-	   and f.c_hlevel = (select min(x.c_hlevel) from i2b2 x
+	   and f.c_hlevel = (select min(x.c_hlevel) from i2b2metadata.i2b2 x
                          where f.sourcesystem_cd = x.sourcesystem_cd
 						)
 	   --and f.c_hlevel = 0 

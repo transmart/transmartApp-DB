@@ -1,1 +1,1 @@
-dfsdsdfsdfsd
+Insert into deapp.DE_MRNA_ANNOTATION (GPL_ID,PROBE_ID,GENE_SYMBOL,PROBESET_ID,GENE_ID,ORGANISM) values ('GSE4382PDM','GFM2','GFM2',5429,84340,'Homo sapiens');

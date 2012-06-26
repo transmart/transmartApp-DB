@@ -8,14 +8,8 @@ CREATE ROLE biomart_user LOGIN
   
 c. In biomart/prerequisites.sql, update the locations of the 2 tablespaces to be created BIOMART and INDX.  Verify that these directories exist with proper permissions.  
 
-The biomart schema can be created thru either the dump file or the raw scripts. 
+The biomart schema can be created thru the SQL scripts. 
 
-Using dump file:
-a.  execute SQL in preqrequisites file by running script or running the commands manually
-b.  execute pg_restore command:
-     pg_restore -d transmart biomart.pgdump.tar
-
-OR 
 
 Using scripts:
 a.  In biomart/start.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
@@ -23,7 +17,7 @@ b.  From biomart folder, execute the start.sh script
      sh ./start.sh
 
 
-Verification - After completing either 1 or 2, verify the counts of the tables by running the SQL in check_counts.sql.  Following are the expected row counts for each table:
+Verification - After completing above, verify the counts of the tables by running the SQL in check_counts.sql.  Following are the expected row counts for each table:
 
 BIO_ASSAY_FEATURE_GROUP	237002 
 BIO_ASSAY_ANALYSIS_DATA	184538 

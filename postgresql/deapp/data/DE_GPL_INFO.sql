@@ -1,0 +1,1 @@
+Insert into deapp.DE_GPL_INFO (PLATFORM,TITLE,ORGANISM,ANNOTATION_DATE,MARKER_TYPE) values ('GSE4382PDM','Stanford cDNA microarrays','Homo sapiens',to_timestamp('18-APR-2012','DD-MON-YYYY'),'Gene Expression');

@@ -1,0 +1,5 @@
+\i data/DE_GPL_INFO.sql
+\i data/DE_MRNA_ANNOTATION.sql
+\i data/DE_SAVED_COMPARISON.sql
+\i data/DE_SUBJECT_MICROARRAY_DATA.sql
+\i data/DE_SUBJECT_SAMPLE_MAPPING.sql

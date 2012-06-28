@@ -42,7 +42,7 @@ CREATE TABLE searchapp.search_gene_sig_file_schema (
 	name varchar(100) NOT NULL,
 	description varchar(255),
 	number_columns bigint DEFAULT 2,
-	supported smallint DEFAULT 0
+	supported boolean DEFAULT false
 );
 ALTER TABLE searchapp.search_gene_sig_file_schema OWNER TO searchapp;
 ALTER TABLE searchapp.search_gene_sig_file_schema ADD CONSTRAINT search_gene_sig_file_sche_pk PRIMARY KEY (search_gene_sig_file_schema_id);
@@ -54,7 +54,7 @@ CREATE TABLE searchapp.search_auth_principal (
 	last_updated timestamp NOT NULL,
 	name varchar(255),
 	unique_id varchar(255),
-	enabled smallint
+	enabled boolean
 );
 ALTER TABLE searchapp.search_auth_principal OWNER TO searchapp;
 ALTER TABLE searchapp.search_auth_principal ADD CONSTRAINT pk_search_principal PRIMARY KEY (id);
@@ -113,7 +113,7 @@ ALTER TABLE searchapp.search_custom_filter ADD CONSTRAINT search_custom_filter_p
 CREATE TABLE searchapp.search_auth_user (
 	id bigint NOT NULL,
 	email varchar(255),
-	email_show smallint,
+	email_show boolean,
 	passwd varchar(255),
 	user_real_name varchar(255),
 	username varchar(255)
@@ -207,8 +207,8 @@ CREATE TABLE searchapp.search_gene_signature (
 	last_modified_date timestamp,
 	modified_by_auth_user_id bigint,
 	version_number varchar(50),
-	public_flag smallint DEFAULT 0,
-	deleted_flag smallint DEFAULT 0,
+	public_flag boolean DEFAULT false,
+	deleted_flag boolean DEFAULT false,
 	parent_gene_signature_id bigint,
 	source_concept_id bigint,
 	source_other varchar(255),
@@ -235,7 +235,7 @@ CREATE TABLE searchapp.search_gene_signature (
 	norm_method_other varchar(255),
 	analysis_method_concept_id bigint,
 	analysis_method_other varchar(255),
-	multiple_testing_correction smallint,
+	multiple_testing_correction boolean,
 	p_value_cutoff_concept_id bigint NOT NULL,
 	upload_file varchar(255) NOT NULL,
 	search_gene_sig_file_schema_id bigint DEFAULT 1,
@@ -502,7 +502,6 @@ ALTER INDEX searchapp.SEARCH_KEYWORD_UK SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_KEYWORD_INDEX1 SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_KEYWORD_INDEX2 SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_KEYWORD_INDEX3 SET TABLESPACE SEARCH_APP;
-ALTER INDEX searchapp.RDT_SEARCH_USER_FDBK_PK SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_SEC_OBJ__PATH_PK SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_SEC_AC_LEVEL_PK SET TABLESPACE SEARCH_APP;
 ALTER INDEX searchapp.SEARCH_SEC_OBJ_PK SET TABLESPACE SEARCH_APP;
@@ -573,7 +572,7 @@ CREATE OR REPLACE VIEW searchapp.search_bio_mkr_correl_fast_view
          3 AS mv_id
   FROM   searchapp.SEARCH_GENE_SIGNATURE_ITEM i, searchapp.SEARCH_GENE_SIGNATURE gs
  WHERE   i.SEARCH_GENE_SIGNATURE_ID = gs.SEARCH_GENE_SIGNATURE_ID
-         AND gs.DELETED_FLAG = 0;
+         AND gs.DELETED_FLAG = false;
 
 
 ALTER FUNCTION searchapp.bio_clinical_trial_uid(text, text, text)

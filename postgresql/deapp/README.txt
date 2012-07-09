@@ -1,11 +1,6 @@
 Prior to executing the scripts:
 a. Create transmart database if does not exist 
-b. Create user biomart_user if does not exist:
-
-CREATE ROLE biomart_user LOGIN
-  PASSWORD 'biomart_user'
-  NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
-
+b. Create user biomart_user if does not exist.  See biomart_user.sql script
 c. In deapp/prerequisites.sql, update the locations of the tablespaces to be created (DEAPP, BIOMART, TRANSMART).  Verify that these directories exist with proper permissions.  
 If the tablespace(s) already exist, these lines can be removed or commented out.
 

@@ -1,6 +1,6 @@
-\i ./prerequisites.sql
-\i ddl/searchapp.sql
-\i data/searchapp_data.sql
-\i ./grants.sql
+\i searchapp/prerequisites.sql
+\i searchapp/ddl/searchapp.sql
+\i searchapp/data/searchapp_data.sql
+\i searchapp/grants.sql
 
 

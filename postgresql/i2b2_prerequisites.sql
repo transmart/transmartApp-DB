@@ -1,3 +1,5 @@
+\set ON_ERROR_STOP OFF 
+
 CREATE ROLE i2b2demodata LOGIN
   PASSWORD 'i2b2demodata'
   SUPERUSER INHERIT CREATEDB NOCREATEROLE NOREPLICATION;
@@ -23,7 +25,6 @@ CREATE SCHEMA i2b2metadata AUTHORIZATION i2b2metadata;
 CREATE SCHEMA i2b2hive AUTHORIZATION i2b2hive;
 CREATE SCHEMA i2b2pm AUTHORIZATION i2b2pm;
 CREATE SCHEMA i2b2workdata AUTHORIZATION i2b2workdata;
-
 
 ALTER ROLE i2b2demodata IN DATABASE transmart SET search_path=i2b2demodata,public;
 ALTER ROLE i2b2metadata IN DATABASE transmart SET search_path=i2b2metadata,public;

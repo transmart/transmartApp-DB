@@ -1,6 +1,6 @@
-\i ./prerequisites.sql
-\i ddl/biomart_ddl.sql
-\i data/POPULATE_BIOMART.sql
-\i data/POPULATE_MV.sql
-\i ./grants.sql
+\i biomart/prerequisites.sql
+\i biomart/ddl/biomart_ddl.sql
+\i biomart/data/POPULATE_BIOMART.sql
+\i biomart/data/POPULATE_MV.sql
+\i biomart/grants.sql
 

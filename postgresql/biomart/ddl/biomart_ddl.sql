@@ -2149,7 +2149,22 @@ order by REF_ARTICLE_PROTOCOL_ID, TRTMT_DESCRIPTION, TRTMT_OCS
 ) v
  ;
 
-
+ 
+CREATE or replace VIEW biomart.BIO_MARKER_EXP_ANALYSIS_MV (BIO_MARKER_ID, BIO_EXPERIMENT_ID, BIO_ASSAY_ANALYSIS_ID,
+                                                           MV_ID)
+  AS SELECT DISTINCT t3.bio_marker_id,
+    t1.bio_experiment_id,
+    t1.bio_assay_analysis_id,
+    t1.bio_assay_analysis_id*100+t3.bio_marker_id
+  FROM biomart.BIO_ASSAY_ANALYSIS_DATA t1,
+    biomart.BIO_EXPERIMENT t2,
+    biomart.BIO_MARKER t3,
+    biomart.BIO_ASSAY_DATA_ANNOTATION t4
+  WHERE t1.bio_experiment_id       = t2.bio_experiment_id
+  AND t2.bio_experiment_type       ='Experiment'
+  AND t3.bio_marker_id             =t4.bio_marker_id
+  AND t1.bio_assay_feature_group_id=t4.bio_assay_feature_group_id;
+    
 ALTER TABLE biomart.bio_assay OWNER TO BIOMART;
 ALTER TABLE biomart.bio_assay_analysis OWNER TO BIOMART;
 ALTER TABLE biomart.bio_assay_analysis_data OWNER TO BIOMART;
@@ -2250,6 +2265,7 @@ ALTER view biomart.ctd_td_smoker_view OWNER TO BIOMART;
 ALTER view biomart.ctd_td_sponsor_view OWNER TO BIOMART;
 ALTER view biomart.ctd_td_status_view OWNER TO BIOMART;
 ALTER view biomart.ctd_treatment_phases_view OWNER TO BIOMART;
+alter view biomart.BIO_MARKER_EXP_ANALYSIS_MV owner to biomart;
 
 -- SEQUENCES
 CREATE SEQUENCE biomart.bio_assay_data_stats_seq INCREMENT 1 MINVALUE 1 NO MAXVALUE START 1 CACHE 20;

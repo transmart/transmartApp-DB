@@ -151,8 +151,12 @@ bio_lit_int_model_mv        0
 ==================================================================
 
 Step 2:
-Execute the i2b2 postgresql import scripts 
+a.  Execute the i2b2 postgresql import scripts 
 
+b. In i2b2-grants.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+
+  Execute the i2b2-grants.sh script
+     sh ./i2b2-grants.sh
 ==================================================================
 ==================================================================
 

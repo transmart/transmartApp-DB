@@ -1,0 +1,333 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Fri Jul 20 17:23:54 2012
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/******** dumpfile=transmart_GPL_1.0GA_10g.dump logfile=transmart_GPL_1.0GA_10g.exp schemas=i2b2pm,i2b2metadata,i2b2demodata,i2b2hive,i2b2workdata,i2b2sampledata,deapp,biomart,searchapp,biomart_user,tm_wz,tm_cz,tm_lz version=10.0 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 1.115 GB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SYNONYM/SYNONYM
+Processing object type SCHEMA_EXPORT/TYPE/TYPE_SPEC
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/SEQUENCE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+Processing object type SCHEMA_EXPORT/PROCEDURE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/VIEW/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TYPE/TYPE_BODY
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/TRIGGER
+Processing object type SCHEMA_EXPORT/EVENT/TRIGGER
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/DOMAIN_INDEX/INDEX
+Processing object type SCHEMA_EXPORT/MATERIALIZED_VIEW
+. . exported "TM_LZ"."LT_SRC_MRNA_DATA"                  30.40 MB  908480 rows
+. . exported "TM_WZ"."WT_SUBJECT_MRNA_PROBESET"          1.665 MB   54400 rows
+. . exported "BIOMART"."BIO_ASSAY_ANALYSIS_DATA"         12.60 MB  184538 rows
+. . exported "TM_LZ"."LZ_SRC_CLINICAL_DATA"              181.0 KB    1938 rows
+. . exported "I2B2METADATA"."I2B2"                       60.42 KB      94 rows
+. . exported "I2B2METADATA"."I2B2_SECURE"                60.17 KB      94 rows
+. . exported "I2B2DEMODATA"."QT_QUERY_MASTER"            36.88 MB    1209 rows
+. . exported "BIOMART"."BIO_DATA_OMIC_MARKER"            1.487 MB   78821 rows
+. . exported "I2B2DEMODATA"."QT_PATIENT_SET_COLLECTION"  1.246 MB   59910 rows
+. . exported "TM_CZ"."CZ_JOB_AUDIT"                      134.3 KB     656 rows
+. . exported "BIOMART"."BIO_MARKER"                      14.82 MB  100171 rows
+. . exported "I2B2DEMODATA"."OBSERVATION_FACT"           172.3 KB    2185 rows
+. . exported "BIOMART"."BIO_ASSAY_FEATURE_GROUP"         8.300 MB  242448 rows
+. . exported "I2B2DEMODATA"."CONCEPT_DIMENSION"          23.61 KB      93 rows
+. . exported "TM_CZ"."ANNOTATION_DEAPP"                  1.360 MB   28849 rows
+. . exported "BIOMART"."BIO_DATA_EXT_CODE"               8.337 MB  134965 rows
+. . exported "TM_CZ"."PROBESET_DEAPP"                    1.027 MB   27724 rows
+. . exported "BIOMART"."BIO_DATA_UID"                    7.458 MB  126764 rows
+. . exported "BIOMART"."BIO_ASSAY_ANALYSIS_DATA_TEA"     1.101 MB   13140 rows
+. . exported "I2B2DEMODATA"."PROVIDER_DIMENSION"         12.33 KB      39 rows
+. . exported "DEAPP"."DE_MRNA_ANNOTATION"                1.355 MB   28849 rows
+. . exported "BIOMART"."BIO_ASSAY_DATA_ANNOTATION"       1.374 MB  104960 rows
+. . exported "BIOMART"."BIO_DISEASE"                     2.554 MB   26581 rows
+. . exported "BIOMART"."BIO_MARKER_CORREL_MV"            2.086 MB  100171 rows
+. . exported "SEARCHAPP"."SEARCH_KEYWORD"                2.925 MB   42119 rows
+. . exported "SEARCHAPP"."SEARCH_KEYWORD_TERM"           3.013 MB  105849 rows
+. . exported "DEAPP"."DE_SUBJECT_MICROARRAY_DATA"        2.492 MB   54400 rows
+. . exported "TM_LZ"."LT_SRC_DEAPP_ANNOT"                1.016 MB   23409 rows
+. . exported "SEARCHAPP"."SEARCH_APP_ACCESS_LOG"           819 KB    4466 rows
+. . exported "I2B2DEMODATA"."CONCEPT_COUNTS"             22.96 KB      93 rows
+. . exported "I2B2PM"."PM_USER_SESSION"                  1.474 MB   20951 rows
+. . exported "TM_CZ"."CZ_JOB_MASTER"                     11.20 KB      26 rows
+. . exported "I2B2HIVE"."JMS_MESSAGES"                   10.19 KB      12 rows
+. . exported "I2B2DEMODATA"."PATIENT_DIMENSION"          24.71 KB     236 rows
+. . exported "I2B2DEMODATA"."ASYNC_JOB"                  53.57 KB     436 rows
+. . exported "BIOMART"."BIO_EXPERIMENT"                  39.04 KB       7 rows
+. . exported "DEAPP"."DE_SUBJECT_SAMPLE_MAPPING"         15.46 KB      10 rows
+. . exported "I2B2DEMODATA"."PATIENT_TRIAL"              11.82 KB     236 rows
+. . exported "I2B2DEMODATA"."QT_QUERY_INSTANCE"          119.0 KB    1209 rows
+. . exported "TM_WZ"."WRK_CLINICAL_DATA"                 34.19 KB     228 rows
+. . exported "I2B2DEMODATA"."QT_QUERY_RESULT_INSTANCE"   156.8 KB    1209 rows
+. . exported "SEARCHAPP"."SEARCH_BIO_MKR_CORREL_FAST_MV"  203.8 KB    5465 rows
+. . exported "TM_LZ"."LT_SRC_CLINICAL_DATA"              23.90 KB     228 rows
+. . exported "BIOMART"."BIO_ASSAY_ANALYSIS"              16.85 KB      12 rows
+. . exported "I2B2HIVE"."TIMERS"                         6.960 KB       2 rows
+. . exported "I2B2METADATA"."CUSTOM_META"                13.49 KB       1 rows
+. . exported "I2B2METADATA"."TABLE_ACCESS"               12.84 KB       1 rows
+. . exported "I2B2SAMPLEDATA"."I2B2_SAMPLE"              23.78 KB       6 rows
+. . exported "I2B2SAMPLEDATA"."TABLE_ACCESS"             13.29 KB       6 rows
+. . exported "SEARCHAPP"."PLUGIN_MODULE"                 64.12 KB      11 rows
+. . exported "SEARCHAPP"."PLUGIN_MODULE1"                62.03 KB      11 rows
+. . exported "SEARCHAPP"."SEARCH_GENE_SIGNATURE_ITEM"    140.3 KB    5465 rows
+. . exported "BIOMART"."BIO_ASSAY_DATASET"               9.820 KB      19 rows
+. . exported "BIOMART"."BIO_CONTENT"                     9.742 KB       7 rows
+. . exported "I2B2DEMODATA"."QT_XML_RESULT"              11.90 KB       4 rows
+. . exported "I2B2HIVE"."CRC_DB_LOOKUP"                  8.976 KB       3 rows
+. . exported "I2B2HIVE"."ONT_DB_LOOKUP"                  8.992 KB       3 rows
+. . exported "I2B2HIVE"."WORK_DB_LOOKUP"                 8.992 KB       3 rows
+. . exported "I2B2PM"."PM_CELL_PARAMS"                   8.640 KB       3 rows
+. . exported "TM_CZ"."CZ_JOB_ERROR"                      9.484 KB       9 rows
+. . exported "TM_LZ"."LT_SRC_MRNA_SUBJ_SAMP_MAP"         9.054 KB      10 rows
+. . exported "BIOMART"."BIO_ASSAY_PLATFORM"              19.68 KB      34 rows
+. . exported "BIOMART"."BIO_ASY_ANALYSIS_PLTFM"          6.140 KB       1 rows
+. . exported "BIOMART"."BIO_CONCEPT_CODE"                11.18 KB      50 rows
+. . exported "BIOMART"."BIO_CONTENT_REFERENCE"           7.335 KB       7 rows
+. . exported "BIOMART"."BIO_CONTENT_REPOSITORY"            6.5 KB       1 rows
+. . exported "BIOMART"."BIO_DATA_DISEASE"                6.343 KB      27 rows
+. . exported "BIOMART"."BIO_TAXONOMY"                    6.125 KB       1 rows
+. . exported "DEAPP"."DE_GPL_INFO"                       6.851 KB       2 rows
+. . exported "DEAPP"."DE_SAVED_COMPARISON"               5.828 KB      10 rows
+. . exported "I2B2DEMODATA"."QT_BREAKDOWN_PATH"          6.609 KB       4 rows
+. . exported "I2B2DEMODATA"."QT_PRIVILEGE"               6.242 KB       5 rows
+. . exported "I2B2DEMODATA"."QT_QUERY_RESULT_TYPE"       7.023 KB      12 rows
+. . exported "I2B2DEMODATA"."QT_QUERY_STATUS_TYPE"       6.101 KB      14 rows
+. . exported "I2B2DEMODATA"."SAMPLE_CATEGORIES"          9.265 KB       5 rows
+. . exported "I2B2DEMODATA"."SET_TYPE"                   5.695 KB       1 rows
+. . exported "I2B2HIVE"."HILOSEQUENCES"                  5.328 KB       1 rows
+. . exported "I2B2HIVE"."JMS_ROLES"                      5.453 KB       9 rows
+. . exported "I2B2HIVE"."JMS_USERS"                      5.734 KB       5 rows
+. . exported "I2B2PM"."PM_CELL_DATA"                     8.484 KB       4 rows
+. . exported "I2B2PM"."PM_HIVE_DATA"                     7.804 KB       1 rows
+. . exported "I2B2PM"."PM_PROJECT_DATA"                  8.109 KB       1 rows
+. . exported "I2B2PM"."PM_PROJECT_USER_ROLES"            7.929 KB      22 rows
+. . exported "I2B2PM"."PM_ROLE_REQUIREMENT"              8.414 KB      11 rows
+. . exported "I2B2PM"."PM_USER_DATA"                     7.765 KB       5 rows
+. . exported "I2B2WORKDATA"."WORKPLACE_ACCESS"           10.12 KB       5 rows
+. . exported "SEARCHAPP"."PLUGIN"                        7.710 KB       1 rows
+. . exported "SEARCHAPP"."PLUGIN1"                       7.710 KB       1 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_GROUP"             5.367 KB       1 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_PRINCIPAL"         7.796 KB       6 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_USER"              7.109 KB       5 rows
+. . exported "SEARCHAPP"."SEARCH_CUSTOM_FILTER"            6.5 KB       1 rows
+. . exported "SEARCHAPP"."SEARCH_CUSTOM_FILTER_ITEM"     6.164 KB       1 rows
+. . exported "SEARCHAPP"."SEARCH_GENE_SIGNATURE"         20.44 KB       4 rows
+. . exported "SEARCHAPP"."SEARCH_GENE_SIG_FILE_SCHEMA"   6.804 KB       3 rows
+. . exported "SEARCHAPP"."SEARCH_REQUEST_MAP"            6.828 KB      17 rows
+. . exported "SEARCHAPP"."SEARCH_ROLE"                   6.312 KB       5 rows
+. . exported "SEARCHAPP"."SEARCH_ROLE_AUTH_USER"         5.539 KB      11 rows
+. . exported "TM_CZ"."TMP_SUBJECT_INFO"                    7.5 KB      57 rows
+. . exported "TM_WZ"."WT_MRNA_NODES"                     8.992 KB       3 rows
+. . exported "TM_WZ"."WT_MRNA_NODE_VALUES"               7.132 KB       1 rows
+. . exported "TM_WZ"."WT_TRIAL_NODES"                    8.523 KB       7 rows
+. . exported "BIOMART"."BIO_ASSAY"                           0 KB       0 rows
+. . exported "BIOMART"."BIO_ASSAY_DATA"                      0 KB       0 rows
+. . exported "BIOMART"."BIO_ASSAY_DATA_STATS"                0 KB       0 rows
+. . exported "BIOMART"."BIO_ASSAY_SAMPLE"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_ASY_ANALYSIS_DATASET"            0 KB       0 rows
+. . exported "BIOMART"."BIO_ASY_DATA_STATS_ALL"              0 KB       0 rows
+. . exported "BIOMART"."BIO_CELL_LINE"                       0 KB       0 rows
+. . exported "BIOMART"."BIO_CGDCP_DATA"                      0 KB       0 rows
+. . exported "BIOMART"."BIO_CLINC_TRIAL_ATTR"                0 KB       0 rows
+. . exported "BIOMART"."BIO_CLINC_TRIAL_PT_GROUP"            0 KB       0 rows
+. . exported "BIOMART"."BIO_CLINC_TRIAL_TIME_PT"             0 KB       0 rows
+. . exported "BIOMART"."BIO_CLINICAL_TRIAL"                  0 KB       0 rows
+. . exported "BIOMART"."BIO_CLINICAL_TRIAL_DESIGN"           0 KB       0 rows
+. . exported "BIOMART"."BIO_COMPOUND"                        0 KB       0 rows
+. . exported "BIOMART"."BIO_CURATED_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_CURATION_DATASET"                0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_ATTRIBUTE"                  0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_COMPOUND"                   0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_CORRELATION"                0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_CORREL_DESCR"               0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_LITERATURE"                 0 KB       0 rows
+. . exported "BIOMART"."BIO_DATA_TAXONOMY"                   0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_ALT_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_AMD_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_INH_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_INT_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_INT_MODEL_MV"                0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_MODEL_DATA"                  0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_PE_DATA"                     0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_REF_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_LIT_SUM_DATA"                    0 KB       0 rows
+. . exported "BIOMART"."BIO_PATIENT"                         0 KB       0 rows
+. . exported "BIOMART"."BIO_PATIENT_EVENT"                   0 KB       0 rows
+. . exported "BIOMART"."BIO_PATIENT_EVENT_ATTR"              0 KB       0 rows
+. . exported "BIOMART"."BIO_SAMPLE"                          0 KB       0 rows
+. . exported "BIOMART"."BIO_STATS_EXP_MARKER"                0 KB       0 rows
+. . exported "BIOMART"."BIO_SUBJECT"                         0 KB       0 rows
+. . exported "BIOMART"."CTD2_CLIN_INHIB_EFFECT"              0 KB       0 rows
+. . exported "BIOMART"."CTD2_DISEASE"                        0 KB       0 rows
+. . exported "BIOMART"."CTD2_INHIB_DETAILS"                  0 KB       0 rows
+. . exported "BIOMART"."CTD2_STUDY"                          0 KB       0 rows
+. . exported "BIOMART"."CTD2_TRIAL_DETAILS"                  0 KB       0 rows
+. . exported "BIOMART"."CTD_ALLOWED_MEDS_TREATMENT"          0 KB       0 rows
+. . exported "BIOMART"."CTD_BIOMARKER"                       0 KB       0 rows
+. . exported "BIOMART"."CTD_DISEASE"                         0 KB       0 rows
+. . exported "BIOMART"."CTD_DRUG_INHIB"                      0 KB       0 rows
+. . exported "BIOMART"."CTD_FULL"                            0 KB       0 rows
+. . exported "BIOMART"."CTD_INCLUSION_CRITERIA"              0 KB       0 rows
+. . exported "BIOMART"."CTD_PRIMARY_ENDPTS"                  0 KB       0 rows
+. . exported "BIOMART"."CTD_SEC_ENDPTS"                      0 KB       0 rows
+. . exported "BIOMART"."CTD_STUDY"                           0 KB       0 rows
+. . exported "BIOMART_USER"."IOE_TEMP_OBJ_REG2"              0 KB       0 rows
+. . exported "BIOMART_USER"."KDE_TEMP_OBJ_REG3"              0 KB       0 rows
+. . exported "BIOMART_USER"."TOAD_PLAN_TABLE"                0 KB       0 rows
+. . exported "DEAPP"."DEAPP_ANNOTATION"                      0 KB       0 rows
+. . exported "DEAPP"."DE_PATHWAY"                            0 KB       0 rows
+. . exported "DEAPP"."DE_PATHWAY_GENE"                       0 KB       0 rows
+. . exported "DEAPP"."DE_SAMPLE_SNP_DATA"                    0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_CALLS_BY_GSM"                   0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_COPY_NUMBER"                    0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_DATA_BY_PATIENT"                0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_DATA_BY_PROBE"                  0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_DATA_DATASET_LOC"               0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_GENE_MAP"                       0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_INFO"                           0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_PROBE"                          0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_PROBE_SORTED_DEF"               0 KB       0 rows
+. . exported "DEAPP"."DE_SNP_SUBJECT_SORTED_DEF"             0 KB       0 rows
+. . exported "DEAPP"."DE_SUBJECT_MICROARRAY_LOGS"            0 KB       0 rows
+. . exported "DEAPP"."DE_SUBJECT_MICROARRAY_MED"             0 KB       0 rows
+. . exported "DEAPP"."DE_SUBJECT_PROTEIN_DATA"               0 KB       0 rows
+. . exported "DEAPP"."DE_SUBJECT_RBM_DATA"                   0 KB       0 rows
+. . exported "DEAPP"."DE_SUBJECT_SNP_DATASET"                0 KB       0 rows
+. . exported "DEAPP"."DE_XTRIAL_CHILD_MAP"                   0 KB       0 rows
+. . exported "DEAPP"."DE_XTRIAL_PARENT_NAMES"                0 KB       0 rows
+. . exported "DEAPP"."HAPLOVIEW_DATA"                        0 KB       0 rows
+. . exported "I2B2DEMODATA"."CODE_LOOKUP"                    0 KB       0 rows
+. . exported "I2B2DEMODATA"."COUNTER"                        0 KB       0 rows
+. . exported "I2B2DEMODATA"."CRC_DB_LOOKUP"                  0 KB       0 rows
+. . exported "I2B2DEMODATA"."DATAMART_REPORT"                0 KB       0 rows
+. . exported "I2B2DEMODATA"."DIMLOADER"                      0 KB       0 rows
+. . exported "I2B2DEMODATA"."ENCOUNTER_MAPPING"              0 KB       0 rows
+. . exported "I2B2DEMODATA"."HILOSEQUENCES"                  0 KB       0 rows
+. . exported "I2B2DEMODATA"."JMS_MESSAGES"                   0 KB       0 rows
+. . exported "I2B2DEMODATA"."JMS_ROLES"                      0 KB       0 rows
+. . exported "I2B2DEMODATA"."JMS_SUBSCRIPTIONS"              0 KB       0 rows
+. . exported "I2B2DEMODATA"."JMS_TRANSACTIONS"               0 KB       0 rows
+. . exported "I2B2DEMODATA"."JMS_USERS"                      0 KB       0 rows
+. . exported "I2B2DEMODATA"."MODIFIER_DIMENSION"             0 KB       0 rows
+. . exported "I2B2DEMODATA"."NEWS_UPDATES"                   0 KB       0 rows
+. . exported "I2B2DEMODATA"."PATIENT_MAPPING"                0 KB       0 rows
+. . exported "I2B2DEMODATA"."QT_ANALYSIS_PLUGIN"             0 KB       0 rows
+. . exported "I2B2DEMODATA"."QT_ANALYSIS_PLUGIN_RESULT_TYPE"      0 KB       0 rows
+. . exported "I2B2DEMODATA"."QT_PATIENT_ENC_COLLECTION"      0 KB       0 rows
+. . exported "I2B2DEMODATA"."QT_PDO_QUERY_MASTER"            0 KB       0 rows
+. . exported "I2B2DEMODATA"."SET_UPLOAD_STATUS"              0 KB       0 rows
+. . exported "I2B2DEMODATA"."SOURCE_MASTER"                  0 KB       0 rows
+. . exported "I2B2DEMODATA"."TIMERS"                         0 KB       0 rows
+. . exported "I2B2DEMODATA"."UPLOAD_STATUS"                  0 KB       0 rows
+. . exported "I2B2DEMODATA"."VISIT_DIMENSION"                0 KB       0 rows
+. . exported "I2B2HIVE"."CRC_ANALYSIS_JOB"                   0 KB       0 rows
+. . exported "I2B2HIVE"."JMS_SUBSCRIPTIONS"                  0 KB       0 rows
+. . exported "I2B2HIVE"."JMS_TRANSACTIONS"                   0 KB       0 rows
+. . exported "I2B2METADATA"."I2B2_TAGS"                      0 KB       0 rows
+. . exported "I2B2METADATA"."ONT_DB_LOOKUP"                  0 KB       0 rows
+. . exported "I2B2METADATA"."ONT_PROCESS_STATUS"             0 KB       0 rows
+. . exported "I2B2METADATA"."QUERY1"                         0 KB       0 rows
+. . exported "I2B2METADATA"."SCHEMES"                        0 KB       0 rows
+. . exported "I2B2PM"."PM_APPROVALS"                         0 KB       0 rows
+. . exported "I2B2PM"."PM_APPROVALS_PARAMS"                  0 KB       0 rows
+. . exported "I2B2PM"."PM_GLOBAL_PARAMS"                     0 KB       0 rows
+. . exported "I2B2PM"."PM_HIVE_PARAMS"                       0 KB       0 rows
+. . exported "I2B2PM"."PM_PROJECT_PARAMS"                    0 KB       0 rows
+. . exported "I2B2PM"."PM_PROJECT_REQUEST"                   0 KB       0 rows
+. . exported "I2B2PM"."PM_PROJECT_USER_PARAMS"               0 KB       0 rows
+. . exported "I2B2PM"."PM_USER_PARAMS"                       0 KB       0 rows
+. . exported "I2B2WORKDATA"."WORKPLACE"                      0 KB       0 rows
+. . exported "SEARCHAPP"."MLOG$_SEARCH_GENE_SIGNATUR"        0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_GROUP_MEMBER"          0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_SEC_OBJECT_ACCESS"      0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_AUTH_USER_SEC_ACCESS"       0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_SECURE_OBJECT"              0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_SECURE_OBJECT_PATH"         0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_SEC_ACCESS_LEVEL"           0 KB       0 rows
+. . exported "SEARCHAPP"."SEARCH_USER_FEEDBACK"              0 KB       0 rows
+. . exported "TM_CZ"."ANNOTATION_DEAPP_20120206"             0 KB       0 rows
+. . exported "TM_CZ"."BIO_CLINICAL_TRIAL_RELEASE"            0 KB       0 rows
+. . exported "TM_CZ"."BIO_DATA_COMPOUND_RELEASE"             0 KB       0 rows
+. . exported "TM_CZ"."BIO_DATA_UID_RELEASE"                  0 KB       0 rows
+. . exported "TM_CZ"."BIO_EXPERIMENT_RELEASE"                0 KB       0 rows
+. . exported "TM_CZ"."CATEGORY_PATH_EXCLUDED_WORDS"          0 KB       0 rows
+. . exported "TM_CZ"."CONCEPT_DIMENSION_RELEASE"             0 KB       0 rows
+. . exported "TM_CZ"."CZ_DATA_PROFILE_COLUMN_EXCLUSI"        0 KB       0 rows
+. . exported "TM_CZ"."CZ_DATA_PROFILE_COLUMN_SAMPLE"         0 KB       0 rows
+. . exported "TM_CZ"."CZ_DATA_PROFILE_STATS"                 0 KB       0 rows
+. . exported "TM_CZ"."CZ_JOB_MESSAGE"                        0 KB       0 rows
+. . exported "TM_CZ"."CZ_PERSON"                             0 KB       0 rows
+. . exported "TM_CZ"."CZ_TEST"                               0 KB       0 rows
+. . exported "TM_CZ"."CZ_TEST_CATEGORY"                      0 KB       0 rows
+. . exported "TM_CZ"."CZ_TEST_RESULT"                        0 KB       0 rows
+. . exported "TM_CZ"."CZ_XTRIAL_CTRL_VOCAB"                  0 KB       0 rows
+. . exported "TM_CZ"."CZ_XTRIAL_EXCLUSION"                   0 KB       0 rows
+. . exported "TM_CZ"."DE_GPL_INFO_RELEASE"                   0 KB       0 rows
+. . exported "TM_CZ"."DE_MRNA_ANNOTATION_RELEASE"            0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_DATA_BY_PATIENT_RELEASE"        0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_DATA_BY_PROBE_RELEASE"          0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_DATA_DS_LOC_RELEASE"            0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_GENE_MAP_RELEASE"               0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_INFO_RELEASE"                   0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_PROBE_RELEASE"                  0 KB       0 rows
+. . exported "TM_CZ"."DE_SNP_PROBE_SORT_DEF_RELEASE"         0 KB       0 rows
+. . exported "TM_CZ"."DE_SUBJECT_MRNA_DATA_RELEASE"          0 KB       0 rows
+. . exported "TM_CZ"."DE_SUBJECT_RBM_DATA_RELEASE"           0 KB       0 rows
+. . exported "TM_CZ"."DE_SUBJ_PROTEIN_DATA_RELEASE"          0 KB       0 rows
+. . exported "TM_CZ"."DE_SUBJ_SAMPLE_MAP_RELEASE"            0 KB       0 rows
+. . exported "TM_CZ"."HAPLOVIEW_DATA_RELEASE"                0 KB       0 rows
+. . exported "TM_CZ"."I2B2_RELEASE"                          0 KB       0 rows
+. . exported "TM_CZ"."I2B2_TAGS_RELEASE"                     0 KB       0 rows
+. . exported "TM_CZ"."NODE_CURATION"                         0 KB       0 rows
+. . exported "TM_CZ"."OBSERVATION_FACT_RELEASE"              0 KB       0 rows
+. . exported "TM_CZ"."PATIENT_DIMENSION_RELEASE"             0 KB       0 rows
+. . exported "TM_CZ"."PROBESET_DEAPP_20120206"               0 KB       0 rows
+. . exported "TM_CZ"."SAMPLE_CATEGORIES_RELEASE"             0 KB       0 rows
+. . exported "TM_CZ"."SEARCH_SECURE_OBJECT_RELEASE"          0 KB       0 rows
+. . exported "TM_CZ"."TMP_NUM_DATA_TYPES"                    0 KB       0 rows
+. . exported "TM_CZ"."TMP_TRIAL_DATA"                        0 KB       0 rows
+. . exported "TM_CZ"."TMP_TRIAL_NODES"                       0 KB       0 rows
+. . exported "TM_LZ"."LT_SRC_SAMPLE_CATEGORIES"              0 KB       0 rows
+. . exported "TM_LZ"."LT_SRC_STUDY_METADATA"                 0 KB       0 rows
+. . exported "TM_LZ"."LZ_SRC_MRNA_DATA"                      0 KB       0 rows
+. . exported "TM_LZ"."LZ_SRC_MRNA_SUBJ_SAMP_MAP"             0 KB       0 rows
+. . exported "TM_LZ"."LZ_SRC_SAMPLE_CATEGORIES"              0 KB       0 rows
+. . exported "TM_LZ"."LZ_SRC_SAMPLE_CATEGORIES_BKUP"         0 KB       0 rows
+. . exported "TM_LZ"."WT_SNP_NODES"                          0 KB       0 rows
+. . exported "TM_LZ"."WT_SNP_NODE_VALUES"                    0 KB       0 rows
+. . exported "TM_WZ"."WRK_MRNA_DATA"                         0 KB       0 rows
+. . exported "TM_WZ"."WT_CLINICAL_DATA_DUPS"                 0 KB       0 rows
+. . exported "TM_WZ"."WT_MRNA_DATA"                          0 KB       0 rows
+. . exported "TM_WZ"."WT_MRNA_SUBJ_SAMPLE_MAP"               0 KB       0 rows
+. . exported "TM_WZ"."WT_NUM_DATA_TYPES"                     0 KB       0 rows
+. . exported "TM_WZ"."WT_SUBJECT_INFO"                       0 KB       0 rows
+. . exported "TM_WZ"."WT_SUBJECT_MICROARRAY_CALCS"           0 KB       0 rows
+. . exported "TM_WZ"."WT_SUBJECT_MICROARRAY_LOGS"            0 KB       0 rows
+. . exported "TM_WZ"."WT_SUBJECT_MICROARRAY_MED"             0 KB       0 rows
+. . exported "TM_WZ"."WT_SUBJECT_MRNA_DATA"                  0 KB       0 rows
+. . exported "TM_WZ"."WT_XTRIAL_NODES"                       0 KB       0 rows
+Master table "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_SCHEMA_01 is:
+  /mnt/dpdump/transmart_GPL_1.0GA_10g.dump
+Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at 17:24:54

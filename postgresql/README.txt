@@ -157,6 +157,13 @@ b. In i2b2-grants.sh, update the "pgbin" variable to the path where the psql exe
 
   Execute the i2b2-grants.sh script
      sh ./i2b2-grants.sh
+     
+c. In post-i2b2.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+
+  Execute the post-i2b2.sh script
+     sh ./post-i2b2.sh
+
+     
 ==================================================================
 ==================================================================
 

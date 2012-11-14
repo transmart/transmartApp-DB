@@ -32,3 +32,4 @@ grant select on i2b2demodata.upload_status                   to biomart_user;
 grant select on i2b2demodata.visit_dimension                 to biomart_user;
 grant select on i2b2metadata.i2b2_tags to biomart_user;
 grant select on i2b2metadata.i2b2 to biomart_user;
+grant select on i2b2demodata.sample_categories to biomart_user;

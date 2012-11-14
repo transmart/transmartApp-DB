@@ -9,6 +9,8 @@
 \i i2b2/i2b2secure.data
 \i i2b2/i2b2metadata.sql
 \i i2b2/i2b2pmclean.sql
+\i i2b2/sample_categories.ddl
+\i i2b2/sample_categories.data
 \i i2b2/grants.sql
 
 

@@ -1,3 +1,9 @@
+In PostgresMigrate Branch:
+  the folder postgres contains scripts for building the postgreSQL demo DB
+  the file transmart.dmp.tar.gz is the original Oracle-based dump file; used
+    to reconstruct the transmart demo database for Oracle.
+
+These notes refer to transmart.dmp.tar.gz: 
 Full schema dump of the transmart schema using oracle's expdp data pump utility
 This transmart database dump includes 3 GEO studies with clinical data in the dataset explorer
 and 7 GEO studies in the search tool.

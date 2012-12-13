@@ -26,6 +26,10 @@ tablespace directory.
 
 Execute the create-main script (substitute hostname if not 'localhost')
 	psql -h localhost -U postgres -d transmart -f create-main.sql --quiet
+	
+Note: a number of warning will be printed which you can ignore, if the below
+verifications are correct, this step worked! The warnings all come from statements
+to "drop x if it exists". 
 
 Verification:
 1. Verify SEARCHAPP table row counts using searchapp/data/check_counts.sql.
@@ -169,30 +173,20 @@ bio_lit_int_model_mv        0
 ==================================================================
 
 Step 2: Execute the i2b2 postgresql import scripts 
-
-a. Execute the i2b2_prerequisites.sql script (substitute hostname if not 'localhost')
-	psql -h localhost -U postgres -d transmart -f i2b2_prerequisites.sql --quiet
+	These are in the master branch of git://github.com/transmart/i2b2_1.6_Postgres.git
+	See 'Data load instructions.docx'
+	in i2b2_1.6_Postgres/demodata/src/src/edu.harvard.i2b2.data/Release_1-6/NewInstall
 	
-	
-	Step 2:
-a.  Execute the i2b2 postgresql import scripts 
-
-b. In i2b2-grants.sh, update the "pgbin" variable to the path
-where the psql executable file is on the server being run on
-
-  Execute the i2b2-grants.sh script
-     sh ./i2b2-grants.sh
-     
-c. In post-i2b2.sh, update the "pgbin" variable to the path 
-where the psql executable file is on the server being run on
-
-  Execute the post-i2b2.sh script
-     sh ./post-i2b2.sh
-
-     
 ==================================================================
 ==================================================================
 
+Step 3: Post-i2b2 scripts (substitute for localhost, if appropriate)
+
+a. psql -h localhost -U postgres -d transmart -f i2b2-grants.sql --quiet
+b. psql -h localhost -U postgres -d transmart -f post-i2b2.sql --quiet
+     
+==================================================================
+==================================================================
 
 Step 3: Create the ETL schema objects.  
   Execute the etl/start.sql script (substitute hostname if not 'localhost')

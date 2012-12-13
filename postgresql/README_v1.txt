@@ -181,6 +181,9 @@ Step 2: Execute the i2b2 postgresql import scripts
 ==================================================================
 
 Step 3: Post-i2b2 scripts (substitute for localhost, if appropriate)
+(Note: I just discovered a problem with this; cm_tz is needed in 
+post-i2b2.sql, but not created until the next step - needs to be fixed!
+Terry Weymouth - Dev 12/13/2012)
 
 a. psql -h localhost -U postgres -d transmart -f i2b2-grants.sql --quiet
 b. psql -h localhost -U postgres -d transmart -f post-i2b2.sql --quiet

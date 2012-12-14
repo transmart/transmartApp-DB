@@ -19,7 +19,7 @@ The create-main.sql script will drop and then create schemas, objects,
 and seed data in the transmart database.  
 
 Prior to executing the script:
-a. Create the transmart database (can use script transmart-db.sql) 
+a. Create the transmart database (you can use the script transmart-db.sql as a guide) 
 b. In tablespaces.sql, update the directory locations of the tablespaces to be created.  
 Verify that these directories exist with proper permissions for a postgresql 
 tablespace directory.
@@ -174,23 +174,16 @@ bio_lit_int_model_mv        0
 
 Step 2: Execute the i2b2 postgresql import scripts 
 	These are in the master branch of git://github.com/transmart/i2b2_1.6_Postgres.git
-	See 'Data load instructions.docx'
-	in i2b2_1.6_Postgres/demodata/src/src/edu.harvard.i2b2.data/Release_1-6/NewInstall
+	See the file 'Data load instructions.docx' in the NewInstall directory,
+	i2b2_1.6_Postgres/demodata/src/src/edu.harvard.i2b2.data/Release_1-6/NewInstall
 	
 ==================================================================
 ==================================================================
 
 Step 3: Post-i2b2 scripts (substitute for localhost, if appropriate)
-(Note: I just discovered a problem with this; cm_tz is needed in 
-post-i2b2.sql, but not created until the next step - needs to be fixed!
-Terry Weymouth - Dev 12/13/2012)
+This includes the ETL schema objects (first, because of dependencies)
 
 a. psql -h localhost -U postgres -d transmart -f i2b2-grants.sql --quiet
-b. psql -h localhost -U postgres -d transmart -f post-i2b2.sql --quiet
+b  psql -h localhost -U postgres -d transmart -f etl/start.sql --quiet
+c. psql -h localhost -U postgres -d transmart -f post-i2b2.sql --quiet
      
-==================================================================
-==================================================================
-
-Step 3: Create the ETL schema objects.  
-  Execute the etl/start.sql script (substitute hostname if not 'localhost')
-    psql -h localhost -U postgres -d transmart -f etl/start.sql --quiet

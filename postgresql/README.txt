@@ -1,25 +1,41 @@
+The following assumes that you have installed postgres using the standard install;
+that the account 'postgres' exists on your postgreSQL database;
+and that the command psql is on your path.
+
+Furthermore, it is assumed that you have done the install of the 
+PostgreSQL Version of I2B2. See the install notes on the transmartprogject.org wiki 
+and the github project for installing postgres i2b2: 
+https://github.com/transmart/i2b2_1.6_Postgres (master branch).
+
 There are 3 main steps to creating the transmart database:
 1.  Create the transmart schemas (and all objects not part of i2b2 or ETL)
-2.  Execute the i2b2 postgresql database import scripts to create i2b2 objects and data
+2.  Execute the i2b2 postgresql database import scripts to 
+create the transmart-specific i2b2 objects, linkages, and data
 3.  Create the ETL schema objects
 
 ==================================================================
 Step 1:
-The create-main.sql script will drop and then create schemas, objects, and seed data in the transmart database.  
+The create-main.sql script will drop and then create schemas, objects, 
+and seed data in the transmart database.  
 
 Prior to executing the script:
-a. Create the transmart database (can use script transmart-db.sql) 
-b. In tablespaces.sql, update the directory locations of the tablespaces to be created.  Verify that these directories exist with proper permissions for a postgresql tablespace directory.  
-c. In create-main.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+a. Create the transmart database (you can use the script transmart-db.sql as a guide) 
+b. In tablespaces.sql, update the directory locations of the tablespaces to be created.  
+Verify that these directories exist with proper permissions for a postgresql 
+tablespace directory.
 
-
-Execute the create-main.sh script
-     sh ./create-main.sh
-
+Execute the create-main script (substitute hostname if not 'localhost')
+	psql -h localhost -U postgres -d transmart -f create-main.sql --quiet
+	
+Note: a number of warning will be printed which you can ignore, if the below
+verifications are correct, this step worked! The warnings all come from statements
+to "drop x if it exists". 
 
 Verification:
-Login as BIOMART_USER/BIOMART_USER...
-1. Verify SEARCHAPP table row counts using searchapp/data/check_counts.sql.  Following are the expected row counts for each table:
+1. Verify SEARCHAPP table row counts using searchapp/data/check_counts.sql.
+  Login as biomart_user/biomart_user...
+  psql -h localhost -U biomart_user -W -d transmart -f searchapp/data/check_counts.sql
+Following are the expected row counts for each table:
 SEARCH_KEYWORD_TERM	105844
 SEARCH_KEYWORD	42114
 SEARCH_REQUEST_MAP	17
@@ -44,7 +60,10 @@ SEARCH_AUTH_SEC_OBJECT_ACCESS	0
 SEARCH_CUSTOM_FILTER	0
 SEARCH_GENE_SIGNATURE	0
 
-2. Verify DEAPP table row counts using deapp/data/check_counts.sql.  Following are the expected row counts for each table:
+2. Verify DEAPP table row counts using deapp/data/check_counts.sql.  
+  Login as biomart_user/biomart_user...
+  psql -h localhost -U biomart_user -W -d transmart -f deapp/data/check_counts.sql
+Following are the expected row counts for each table:
 DE_SUBJECT_MICROARRAY_DATA	54400
 DE_MRNA_ANNOTATION	5440
 DE_SUBJECT_SAMPLE_MAPPING	10
@@ -72,7 +91,10 @@ DE_PATHWAY	0
 DEAPP_ANNOTATION	0
 DE_SNP_INFO	0
 
-3. Verify BIOMART table row counts using biomart/data/check_counts.sql.  Following are the expected row counts for each table:
+3. Verify BIOMART table row counts using biomart/data/check_counts.sql.
+  Login as biomart_user/biomart_user...
+  psql -h localhost -U biomart_user -W -d transmart -f biomart/data/check_counts.sql  
+Following are the expected row counts for each table:
 BIO_ASSAY_FEATURE_GROUP	237002 
 BIO_ASSAY_ANALYSIS_DATA	184538 
 BIO_DATA_EXT_CODE	134965 
@@ -150,29 +172,18 @@ bio_lit_int_model_mv        0
 ==================================================================
 ==================================================================
 
-Step 2:
-a.  Execute the i2b2 postgresql import scripts 
+Step 2: Execute the i2b2 postgresql import scripts 
+	These are in the master branch of git://github.com/transmart/i2b2_1.6_Postgres.git
+	See the file 'Data load instructions.docx' in the NewInstall directory,
+	i2b2_1.6_Postgres/demodata/src/src/edu.harvard.i2b2.data/Release_1-6/NewInstall
+	
+==================================================================
+==================================================================
 
-b. In i2b2-grants.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
+Step 3: Post-i2b2 scripts (substitute for localhost, if appropriate)
+This includes the ETL schema objects (first, because of dependencies)
 
-  Execute the i2b2-grants.sh script
-     sh ./i2b2-grants.sh
+a. psql -h localhost -U postgres -d transmart -f i2b2-grants.sql --quiet
+b  psql -h localhost -U postgres -d transmart -f etl/start.sql --quiet
+c. psql -h localhost -U postgres -d transmart -f post-i2b2.sql --quiet
      
-c. In post-i2b2.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
-
-  Execute the post-i2b2.sh script
-     sh ./post-i2b2.sh
-
-     
-==================================================================
-==================================================================
-
-
-Step 3:
-Create the ETL schema objects.  
-==================================================================
-Prior to executing the script:
-a. In create-etl.sh, update the "pgbin" variable to the path where the psql executable file is on the server being run on
-
-Execute the create-etl.sh script
-     sh ./create-etl.sh

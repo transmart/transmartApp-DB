@@ -200,7 +200,9 @@ CREATE TABLE deapp.de_subject_sample_mapping (
 	sample_id bigint,
 	sample_cd varchar(200),
 	category_cd varchar(1000),
-	source_cd varchar(50)
+	source_cd varchar(50),
+  	omic_source_study varying(200),
+  	omic_patient_id bigint
 );
 ALTER TABLE deapp.de_subject_sample_mapping OWNER TO deapp;
 CREATE INDEX de_subject_smpl_mpng_idx2 ON deapp.de_subject_sample_mapping (patient_id,timepoint_cd,platform_cd,assay_id,trial_name);

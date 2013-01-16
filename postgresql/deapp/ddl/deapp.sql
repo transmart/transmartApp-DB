@@ -201,7 +201,7 @@ CREATE TABLE deapp.de_subject_sample_mapping (
 	sample_cd varchar(200),
 	category_cd varchar(1000),
 	source_cd varchar(50),
-  	omic_source_study varying(200),
+  	omic_source_study varchar(200),
   	omic_patient_id bigint
 );
 ALTER TABLE deapp.de_subject_sample_mapping OWNER TO deapp;

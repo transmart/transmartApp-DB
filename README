@@ -1,6 +1,9 @@
-Full schema dump of the transmart schema using oracle's expdp data pump utility
+On master branch: Full schema dump of the transmart schema using oracle's expdp data pump utility
 This transmart database dump includes 3 GEO studies with clinical data in the dataset explorer
 and 7 GEO studies in the search tool.
+
+Note: see branch 'postgresMigrate' for directory (postgres) of scripts and Readme.txt
+to build the PostgreSQL database for the PostgreSQL version of transmartApp.
 
 Following schemas are included in the dmp file:
 I2B2DEMODATA

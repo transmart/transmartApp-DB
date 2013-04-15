@@ -18,9 +18,9 @@ ALTER TABLE tm_wz.wt_subject_mrna_data OWNER TO tm_wz;
 CREATE TABLE tm_wz.wt_subject_mrna_probeset (
 	probeset_id bigint,
 	expr_id varchar(500),
-	intensity_value bigint,
-	num_calls bigint,
-	pvalue bigint,
+	intensity_value numeric,
+	num_calls numeric,
+	pvalue numeric,
 	assay_id bigint,
 	patient_id bigint,
 	sample_id bigint,
@@ -133,7 +133,8 @@ CREATE TABLE tm_wz.wt_subject_microarray_logs (
 	subject_id varchar(50),
 	trial_name varchar(50),
 	timepoint varchar(100),
-	log_intensity bigint
+	log_intensity bigint,
+	raw_intensity numeric
 );
 ALTER TABLE tm_wz.wt_subject_microarray_logs OWNER TO tm_wz;
 CREATE INDEX wt_subject_mrna_logs_i1 ON tm_wz.wt_subject_microarray_logs (trial_name,probeset_id);

@@ -1,3 +1,5 @@
 Before using these SQL scripts, please create the schema and load sample data from https://github.com/transmart/transmartApp-DB/tree/postgresMigrate/postgresql. After that, biomart data are well loaded.
 i2b2metadata.sql and i2b2demodata.sql here are used to load clinical data sample into postgresql server.
 deapp.sql is still under testing.
+
+note: There are two types of c_hlevel in i2b2metadata.i2b2 and i2b2metadata.i2b2_secure. The number of the c_hlevel begin with -1 in one type, while the number begin with 0 in the other. The script here fits for the first type. If you use transmart in the other type, please plus 1 in these c_hlevel reocrds manually.

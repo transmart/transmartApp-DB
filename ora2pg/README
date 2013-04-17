@@ -1,0 +1,3 @@
+Before using these SQL scripts, please create the schema and load sample data from https://github.com/transmart/transmartApp-DB/tree/postgresMigrate/postgresql. After that, biomart data are well loaded.
+i2b2metadata.sql and i2b2demodata.sql here are used to load clinical data sample into postgresql server.
+deapp.sql is still under testing.

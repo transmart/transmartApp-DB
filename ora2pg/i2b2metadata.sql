@@ -109,7 +109,9 @@ INSERT INTO i2b2 (c_hlevel,c_fullname,c_name,c_synonym_cd,c_visualattributes,c_t
 INSERT INTO i2b2 (c_hlevel,c_fullname,c_name,c_synonym_cd,c_visualattributes,c_totalnum,c_basecode,c_metadataxml,c_facttablecolumn,c_tablename,c_columnname,c_columndatatype,c_operator,c_dimcode,c_comment,c_tooltip,update_date,download_date,import_date,sourcesystem_cd,valuetype_cd,m_applied_path,m_exclusion_cd) VALUES (2,'\Public Studies\Breast_Cancer_Sorlie_GSE4382\Sample Factors\Oestrogen receptor assay\','Oestrogen receptor assay','N','FA ',NULL,'57',NULL,'CONCEPT_CD','CONCEPT_DIMENSION','CONCEPT_PATH','T','LIKE','\Public Studies\Breast_Cancer_Sorlie_GSE4382\Sample Factors\Oestrogen receptor assay\','trial:GSE4382','\Public Studies\Breast_Cancer_Sorlie_GSE4382\Sample Factors\Oestrogen receptor assay\','2012-02-27 15:06:27','2012-02-27 15:06:27','2012-02-27 15:06:27','GSE4382',NULL,'@',NULL);
 
 
-
+update i2b2metadata.i2b2
+set c_visualattributes = 'LAH'
+where c_fullname like '\\Public Studies\\Breast_Cancer_Sorlie_GSE4382\\Biomarker Data\\Gene Expression\\Stanford cDNA microarrays\\Breast\\'
 
 
 INSERT INTO i2b2_secure (c_hlevel,c_fullname,c_name,c_synonym_cd,c_visualattributes,c_totalnum,c_basecode,c_metadataxml,c_facttablecolumn,c_tablename,c_columnname,c_columndatatype,c_operator,c_dimcode,c_comment,c_tooltip,update_date,download_date,import_date,sourcesystem_cd,valuetype_cd,secure_obj_token,m_applied_path,m_exclusion_cd) VALUES (0,'\Public Studies\Acute_Physiologic_Hyperinsulinemia_Coletta_GSE9105\','Acute_Physiologic_Hyperinsulinemia_Coletta_GSE9105','N','FA ',NULL,'58',NULL,'CONCEPT_CD','CONCEPT_DIMENSION','CONCEPT_PATH','T','LIKE','\Public Studies\Acute_Physiologic_Hyperinsulinemia_Coletta_GSE9105\','trial:GSE9105','\Public Studies\Acute_Physiologic_Hyperinsulinemia_Coletta_GSE9105\','2012-02-27 15:51:20','2012-02-27 15:51:20','2012-02-27 15:51:20','GSE9105',NULL,'EXP:PUBLIC',NULL,NULL);

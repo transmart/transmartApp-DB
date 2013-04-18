@@ -71,6 +71,10 @@ DELETE FROM i2b2demodata.qt_xml_result;
 delete from i2b2demodata.qt_query_result_instance;
 delete from i2b2demodata.qt_query_instance;
 
+ALTER TABLE i2b2demodata.observation_fact drop constraint observation_fact_pk;
+ALTER TABLE i2b2demodata.observation_fact ALTER COLUMN encounter_num DROP NOT NULL;
+ALTER TABLE i2b2demodata.observation_fact ALTER COLUMN start_date DROP NOT NULL;
+
 \set ON_ERROR_STOP ON
 
 BEGIN;

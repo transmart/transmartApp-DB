@@ -1,6 +1,7 @@
 \i i2b2/cast.sql
 \i i2b2/nvl.sql
 \i i2b2/tables.sql
+\i i2b2/i2b2_obs_fact_fixup.sql
 \i i2b2/patient_trial.ddl
 \i i2b2/patient_trial.data
 \i i2b2/concept_counts.ddl

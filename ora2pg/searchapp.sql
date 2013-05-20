@@ -1,0 +1,14 @@
+SET search_path TO searchapp;
+
+SET client_encoding TO 'WIN1252';
+
+\set ON_ERROR_STOP ON
+
+\set ON_ERROR_STOP OFF
+
+UPDATE
+    plugin_module
+SET
+    params = '{"id":"markerSelection","converter":{"R":["source(''||PLUGINSCRIPTDIRECTORY||Common/dataBuilders.R'')","source(''||PLUGINSCRIPTDIRECTORY||Common/ExtractConcepts.R'')","source(''||PLUGINSCRIPTDIRECTORY||Common/collapsingData.R'')","source(''||PLUGINSCRIPTDIRECTORY||Common/parseDirectory.R'')","source(''||PLUGINSCRIPTDIRECTORY||MarkerSelection/BuildMSData.R'')","\t\t\t\t\t\tparseDirectory(topLevelDirectory = ''||TOPLEVELDIRECTORY||'')\n\t\t\t\t\t","\t\t\t\t\t\t\tMSData.build(input.dataFile = ''||TOPLEVELDIRECTORY||workingDirectory/mRNA.trans'',\n\t\t\t\t\t\t\tsample.subset1=''||SAMPLE1||'',\n\t\t\t\t\t\t\ttime.subset1=''||TIMEPOINTS1||'',\n\t\t\t\t\t\t\ttissues.subset1=''||TISSUES1||'',\n\t\t\t\t\t\t\tplatform.subset1=''||GPL1||'',\n\t\t\t\t\t\t\tsample.subset2=''||SAMPLE2||'',\n\t\t\t\t\t\t\ttime.subset2=''||TIMEPOINTS2||'',\n\t\t\t\t\t\t\ttissues.subset2=''||TISSUES2||'',\n\t\t\t\t\t\t\tplatform.subset2=''||GPL2||'',\n\t\t\t\t\t\t\tgenes = ''||GENES||'')\n\t\t\t\t\t"]},"name":"MarkerSelection","dataFileInputMapping":{"CLINICAL.TXT":"TRUE","MRNA_DETAILED.TXT":"mrnaData","SNP.TXT":"snpData"},"dataTypes":{"subset1":["CLINICAL.TXT"]},"view":"MarkerSelection","pivotData":false,"processor":{"R":["source(''||PLUGINSCRIPTDIRECTORY||MarkerSelection/MarkerSelection.R'')","\t\t\t\t\tMS.loader(\n\t\t\t\t\tinput.filename=''outputfile'',numberOfMarkers=||NUMBEROFMARKERS||)\n\t\t\t\t\t","source(''||PLUGINSCRIPTDIRECTORY||Heatmap/HeatmapLoader.R'')","\t\t\t\t\tHeatmap.loader(\n\t\t\t\t\tinput.filename=''heatmapdata'', meltData = FALSE\n\t\t\t\t\t,imageWidth=''||IMAGEWIDTH||''\n\t\t\t\t\t,imageHeight=''||IMAGEHEIGHT||''\n\t\t\t\t\t,pointsize=''||TEXTSIZE||''\n\t\t\t\t\t)\n\t\t\t\t\t"]},"renderer":{"GSP":"/markerSelection/markerSelectionOut"},"variableMapping":{"||GENES||":"divIndependentVariablePathway","||SAMPLE1||":"divIndependentVariablesamples","||TIMEPOINTS1||":"divIndependentVariabletimepoints","||IMAGEHEIGHT||":"txtImageHeight","||TISSUES1||":"divIndependentVariabletissues","||IMAGEWIDTH||":"txtImageWidth","||GPL2||":"divIndependentVariablegplsValue2","||SAMPLE2||":"divIndependentVariablesamples2","||TYPEIND||":"divIndependentVariableType","||INDEPENDENT||":"independentVariable","||SNPTYPE||":"divIndependentVariableSNPType","||TISSUES2||":"divIndependentVariabletissues2","||TIMEPOINTS2||":"divIndependentVariabletimepoints2","||GPL1||":"divIndependentVariablegplsValue","||TEXTSIZE||":"txtTextSize","||NUMBEROFMARKERS||":"txtNumberOfMarkers"}}'
+where
+	name = 'Marker Selection'

@@ -2,4 +2,8 @@
 alter table i2b2demodata.observation_fact drop constraint observation_fact_pk;
 alter table i2b2demodata.observation_fact alter column encounter_num drop not null;
 alter table i2b2demodata.observation_fact alter column start_date drop not null;
-alter table i2b2demodata.observation_fact add primary key (PATIENT_NUM, CONCEPT_CD, PROVIDER_ID, MODIFIER_CD);
+drop index if exists i2b2demodata.fact_cnpt_pat_enct_idx;
+drop index if exists i2b2demodata.fact_nolob;
+drop index if exists i2b2demodata.fact_patcon_date_prvd_idx;
+--queries for clinical data always restrict to a value of modifier_cd and join using patient_num
+create index fact_modifier_patient on i2b2demodata.observation_fact(modifier_cd, patient_num);

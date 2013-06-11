@@ -42,7 +42,8 @@ CREATE ROLE tm_wz;
 ALTER ROLE tm_wz WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION PASSWORD 'md5ecb88cc49310482090fe9243436fc73b';
 
 
-
+CREATE ROLE gustavo; -- this is a patch to "mask" error messages that arise because this role
+                     -- was unintentionally included in the dump files
 
 --
 -- PostgreSQL database cluster dump complete

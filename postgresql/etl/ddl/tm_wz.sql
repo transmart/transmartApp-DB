@@ -53,7 +53,8 @@ CREATE TABLE tm_wz.wt_trial_nodes (
 	sample_type varchar(100),
 	data_label varchar(500),
 	node_name varchar(500),
-	data_value varchar(500)
+	data_value varchar(500),
+	data_type varchar(20)
 );
 ALTER TABLE tm_wz.wt_trial_nodes OWNER TO tm_wz;
 CREATE TABLE tm_wz.wt_xtrial_nodes (
@@ -133,7 +134,7 @@ CREATE TABLE tm_wz.wt_subject_microarray_logs (
 	subject_id varchar(50),
 	trial_name varchar(50),
 	timepoint varchar(100),
-	log_intensity bigint,
+	log_intensity numeric,
 	raw_intensity numeric
 );
 ALTER TABLE tm_wz.wt_subject_microarray_logs OWNER TO tm_wz;

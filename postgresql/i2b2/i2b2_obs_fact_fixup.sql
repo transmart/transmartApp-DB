@@ -2,6 +2,7 @@
 alter table i2b2demodata.observation_fact drop constraint observation_fact_pk;
 alter table i2b2demodata.observation_fact alter column encounter_num drop not null;
 alter table i2b2demodata.observation_fact alter column start_date drop not null;
+alter table i2b2demodata.observation_fact alter column instance_num drop not null;
 drop index if exists i2b2demodata.fact_cnpt_pat_enct_idx;
 drop index if exists i2b2demodata.fact_nolob;
 drop index if exists i2b2demodata.fact_patcon_date_prvd_idx;

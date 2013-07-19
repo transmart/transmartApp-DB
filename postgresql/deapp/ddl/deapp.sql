@@ -86,7 +86,8 @@ CREATE TABLE deapp.de_subject_microarray_data (
 	raw_intensity double precision,
 	log_intensity double precision,
 	zscore double precision,
-	raw_intensity_4 double precision
+	raw_intensity_4 double precision,
+	partition_id numeric
 );
 ALTER TABLE deapp.de_subject_microarray_data OWNER TO deapp;
 CREATE INDEX de_microarray_data_idx1 ON deapp.de_subject_microarray_data (trial_name,assay_id,probeset_id);
@@ -172,7 +173,8 @@ CREATE TABLE deapp.de_gpl_info (
 	title varchar(500),
 	organism varchar(100),
 	annotation_date timestamp,
-	marker_type varchar(100)
+	marker_type varchar(100),
+	release_nbr numeric
 );
 ALTER TABLE deapp.de_gpl_info OWNER TO deapp;
 
@@ -202,7 +204,8 @@ CREATE TABLE deapp.de_subject_sample_mapping (
 	category_cd varchar(1000),
 	source_cd varchar(50),
   	omic_source_study varchar(200),
-  	omic_patient_id bigint
+  	omic_patient_id bigint,
+  	partition_id numeric
 );
 ALTER TABLE deapp.de_subject_sample_mapping OWNER TO deapp;
 CREATE INDEX de_subject_smpl_mpng_idx2 ON deapp.de_subject_sample_mapping (patient_id,timepoint_cd,platform_cd,assay_id,trial_name);
@@ -331,6 +334,7 @@ CREATE SEQUENCE deapp.seq_assay_id INCREMENT 1 MINVALUE 1 NO MAXVALUE START 41 C
 ALTER SEQUENCE deapp.seq_assay_id OWNER TO deapp;
 CREATE SEQUENCE deapp.seq_data_id INCREMENT 1 MINVALUE 1 NO MAXVALUE START 1 CACHE 20;
 ALTER SEQUENCE deapp.seq_data_id OWNER TO deapp;
+CREATE SEQUENCE deapp.seq_mrna_partition_id;
 
 
 DROP TRIGGER IF EXISTS de_parent_cd_trg ON deapp.de_xtrial_parent_names CASCADE;

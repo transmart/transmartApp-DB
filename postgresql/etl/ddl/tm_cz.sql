@@ -448,7 +448,7 @@ CREATE TABLE tm_cz.bio_data_compound_release (
 ALTER TABLE tm_cz.bio_data_compound_release OWNER TO tm_cz;
 CREATE TABLE tm_cz.cz_job_error (
 	job_id bigint NOT NULL,
-	error_number varchar(50),
+	error_number varchar(30),
 	error_message varchar(1000),
 	error_stack varchar(2000),
 	seq_id bigint NOT NULL,

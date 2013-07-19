@@ -448,7 +448,7 @@ CREATE TABLE tm_cz.bio_data_compound_release (
 ALTER TABLE tm_cz.bio_data_compound_release OWNER TO tm_cz;
 CREATE TABLE tm_cz.cz_job_error (
 	job_id bigint NOT NULL,
-	error_number varchar(50),
+	error_number varchar(30),
 	error_message varchar(1000),
 	error_stack varchar(2000),
 	seq_id bigint NOT NULL,
@@ -772,6 +772,7 @@ CREATE TRIGGER trg_xtrial_ctrl_vocab_id
 
 
 
+
 ALTER INDEX tm_cz.NODE_CURATION_PK SET TABLESPACE INDX;
 ALTER INDEX tm_cz.CZ_JOB_AUDIT_PK SET TABLESPACE TRANSMART;
 ALTER INDEX tm_cz.CZ_JOB_MASTER_PK SET TABLESPACE TRANSMART;
@@ -831,3 +832,4 @@ ALTER TABLE tm_cz.TMP_TRIAL_NODES SET TABLESPACE TRANSMART;
 
 REVOKE ALL ON SCHEMA TM_CZ FROM PUBLIC;
 GRANT ALL ON SCHEMA TM_CZ TO BIOMART_USER;
+--grant all on all tables in schema biomart to tm_cz

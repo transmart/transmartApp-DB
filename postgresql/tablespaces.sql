@@ -1,10 +1,10 @@
 
-CREATE TABLESPACE DEAPP LOCATION '/opt/PostgreSQL/9.1/data/tablespaces/deapp';
+CREATE TABLESPACE DEAPP LOCATION '${POSTGRES_HOME}/data/tablespaces/deapp';
 
-CREATE TABLESPACE biomart LOCATION '/opt/PostgreSQL/9.1/data/tablespaces/biomart';
+CREATE TABLESPACE biomart LOCATION '${POSTGRES_HOME}/data/tablespaces/biomart';
 
-CREATE TABLESPACE transmart LOCATION '/opt/PostgreSQL/9.1/data/tablespaces/transmart';
+CREATE TABLESPACE transmart LOCATION '${POSTGRES_HOME}/data/tablespaces/transmart';
 
-CREATE TABLESPACE INDX LOCATION '/opt/PostgreSQL/9.1/data/tablespaces/indx';
+CREATE TABLESPACE INDX LOCATION '${POSTGRES_HOME}/data/tablespaces/indx';
 
-CREATE TABLESPACE SEARCH_APP LOCATION '/opt/PostgreSQL/9.1/data/tablespaces/search_app';
+CREATE TABLESPACE SEARCH_APP LOCATION '${POSTGRES_HOME}/data/tablespaces/search_app';

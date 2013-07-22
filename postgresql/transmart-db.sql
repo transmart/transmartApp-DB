@@ -1,6 +1,6 @@
 -- to kill all sessions connectioned to the database
-
---SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'transmart';
+\connect postgres
+SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'transmart';
 
 DROP DATABASE transmart;
 

@@ -5,4 +5,9 @@
 \i i2b2/ddl/i2b2metadata.sql
 \i i2b2/ddl/i2b2workdata.sql
 \i i2b2/grants.sql
+\i i2b2/data/i2b2pm_data.sql
+\i i2b2/data/i2b2hive_data.sql
+\i i2b2/data/i2b2demodata_data.sql
+\i i2b2/data/i2b2metadata_data.sql
+\i i2b2/data/i2b2workdata_data.sql
 

@@ -1,4 +1,4 @@
-\i ./cleanup.sql
+--\i ./cleanup.sql
 \i ./roles.sql
 \i ./tablespaces.sql
 \i biomart/start.sql

@@ -272,14 +272,14 @@ ALTER FUNCTION searchapp.tf_trgi_search_sec_obj_path_id() OWNER TO searchapp;
 -- Name: =; Type: OPERATOR; Schema: searchapp; Owner: gustavo
 --
 
-CREATE OPERATOR = (
-    PROCEDURE = public.equal_numeric_integer,
-    LEFTARG = numeric,
-    RIGHTARG = character varying
-);
-
-
-ALTER OPERATOR searchapp.= (numeric, character varying) OWNER TO gustavo;
+--CREATE OPERATOR = (
+--    PROCEDURE = public.equal_numeric_integer,
+--    LEFTARG = numeric,
+--    RIGHTARG = character varying
+--);
+--
+--
+--ALTER OPERATOR searchapp.= (numeric, character varying) OWNER TO gustavo;
 
 --
 -- TOC entry 491 (class 1259 OID 25594)

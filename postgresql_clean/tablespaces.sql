@@ -9,11 +9,11 @@ SET standard_conforming_strings = on;
 -- Tablespaces
 --
 
-CREATE TABLESPACE biomart OWNER biomart_user LOCATION '/Library/PostgreSQL/9.2/data/tablespaces/biomart';
-CREATE TABLESPACE deapp OWNER biomart_user LOCATION '/Library/PostgreSQL/9.2/data/tablespaces/deapp';
-CREATE TABLESPACE indx OWNER biomart_user LOCATION '/Library/PostgreSQL/9.2/data/tablespaces/indx';
-CREATE TABLESPACE search_app OWNER biomart_user LOCATION '/Library/PostgreSQL/9.2/data/tablespaces/search_app';
-CREATE TABLESPACE transmart OWNER biomart_user LOCATION '/Library/PostgreSQL/9.2/data/tablespaces/transmart';
+CREATE TABLESPACE biomart OWNER biomart_user LOCATION '${TABLESPACES_DIR}/biomart';
+CREATE TABLESPACE deapp OWNER biomart_user LOCATION '${TABLESPACES_DIR}/deapp';
+CREATE TABLESPACE indx OWNER biomart_user LOCATION '${TABLESPACES_DIR}/indx';
+CREATE TABLESPACE search_app OWNER biomart_user LOCATION '${TABLESPACES_DIR}/search_app';
+CREATE TABLESPACE transmart OWNER biomart_user LOCATION '${TABLESPACES_DIR}/transmart';
 
 
 

@@ -5,8 +5,8 @@ CREATE OR REPLACE FUNCTION tm_cz.cz_write_info
   messageprocedure character varying, 
   infomessage character varying
 )
-  RETURNS numeric AS
-
+RETURNS numeric 
+AS $$
 
 BEGIN
     begin

@@ -6,11 +6,11 @@ CREATE OR REPLACE FUNCTION tm_cz.cz_info_handler
  infomessage character varying, 
  stepnumber character varying
  )
-  RETURNS integer AS
-
+RETURNS numeric
+AS $$
 DECLARE 
 	databaseName VARCHAR(100);
-	rtnCd	integer;
+	rtnCd	numeric;
 BEGIN
 
 	select database_name INTO databaseName
@@ -23,3 +23,4 @@ BEGIN
 return rtnCd;
   
 END;
+$$ LANGUAGE plpgsql

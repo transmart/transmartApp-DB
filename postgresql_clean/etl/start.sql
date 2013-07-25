@@ -1,4 +1,4 @@
---\i etl/prerequisites.sql
+\i etl/prerequisites.sql
 \i etl/ddl/tm_cz.sql
 \i etl/ddl/tm_lz.sql
 \i etl/ddl/tm_wz.sql

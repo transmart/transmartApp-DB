@@ -1,8 +1,24 @@
+Folder postgres_complete includes create scripts for all necessary schemas
+including i2b2 and ETL. It has the same data loaded as the db dump included in
+postgres_version folder. 
+
+To create database:
+psql -h localhost -U postgres -d transmart -f create-transmart-db.sql
+
+Edit tablespaces.sql (in this case for IC VMs)
+sed -i -e "s|\${TABLESPACES_DIR}|\/opt\/TM_tablespaces|" tablespaces.sql
+
+To create schemas
+psql -h localhost -U postgres -d transmart -f create-main.sql
+
+=============================================================================
 In PostgresMigrate Branch:
   the folder postgres contains scripts for building the postgreSQL demo DB
   the file transmart.dmp.tar.gz is the original Oracle-based dump file; used
     to reconstruct the transmart demo database for Oracle.
-
+    
+    Create scripts in postgres folder 
+==============================================================================
 These notes refer to transmart.dmp.tar.gz: 
 Full schema dump of the transmart schema using oracle's expdp data pump utility
 This transmart database dump includes 3 GEO studies with clinical data in the dataset explorer

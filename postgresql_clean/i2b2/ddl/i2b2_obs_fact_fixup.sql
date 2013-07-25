@@ -8,3 +8,6 @@ drop index if exists i2b2demodata.fact_nolob;
 drop index if exists i2b2demodata.fact_patcon_date_prvd_idx;
 --queries for clinical data always restrict to a value of modifier_cd and join using patient_num
 create index fact_modifier_patient on i2b2demodata.observation_fact(modifier_cd, patient_num);
+
+update i2b2metadata.table_access set c_hlevel=(select c_hlevel from i2b2metadata.i2b2  where c_fullname='\Public Studies\') where c_fullname='\Public Studies\';
+update i2b2metadata.i2b2 set c_columndatatype='T';

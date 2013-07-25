@@ -11,6 +11,7 @@
 \i i2b2/data/i2b2metadata_data.sql
 \i i2b2/data/i2b2workdata_data.sql
 \i i2b2/ddl/cast.sql
+\i i2b2/ddl/nvl.sql
 \i i2b2/ddl/i2b2_obs_fact_fixup.sql
 
 

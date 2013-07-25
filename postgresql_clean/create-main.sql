@@ -5,3 +5,4 @@
 \i searchapp/start.sql
 \i deapp/start.sql
 \i i2b2/start.sql
+\i etl/start.sql

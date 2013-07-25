@@ -255,7 +255,8 @@ CREATE TABLE de_gpl_info (
     organism character varying(100),
     annotation_date timestamp without time zone,
     marker_type character varying(100),
-    genome_build character varying(20)
+    genome_build character varying(20),
+    release_nbr numeric
 );
 
 
@@ -702,7 +703,8 @@ CREATE TABLE de_subject_sample_mapping (
     category_cd character varying(1000),
     source_cd character varying(50),
     omic_source_study character varying(200),
-    omic_patient_id bigint
+    omic_patient_id bigint,
+    partition_id numeric
 );
 
 

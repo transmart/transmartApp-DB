@@ -26,7 +26,7 @@ SET search_path = deapp, pg_catalog;
 
 --
 -- TOC entry 706 (class 1255 OID 24155)
--- Name: tf_de_parent_cd_trg(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_de_parent_cd_trg(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_de_parent_cd_trg() RETURNS trigger
@@ -41,11 +41,11 @@ END;
 $$;
 
 
-ALTER FUNCTION deapp.tf_de_parent_cd_trg() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_de_parent_cd_trg() OWNER TO deapp;
 
 --
 -- TOC entry 707 (class 1255 OID 24156)
--- Name: tf_trg_de_snp_info_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_de_snp_info_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_de_snp_info_id() RETURNS trigger
@@ -60,11 +60,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_de_snp_info_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_de_snp_info_id() OWNER TO deapp;
 
 --
 -- TOC entry 708 (class 1255 OID 24157)
--- Name: tf_trg_de_snp_probe_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_de_snp_probe_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_de_snp_probe_id() RETURNS trigger
@@ -79,11 +79,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_de_snp_probe_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_de_snp_probe_id() OWNER TO deapp;
 
 --
 -- TOC entry 709 (class 1255 OID 24158)
--- Name: tf_trg_de_snp_probe_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_de_snp_probe_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_de_snp_probe_sorted_def_id() RETURNS trigger
@@ -98,11 +98,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_de_snp_probe_sorted_def_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_de_snp_probe_sorted_def_id() OWNER TO deapp;
 
 --
 -- TOC entry 710 (class 1255 OID 24159)
--- Name: tf_trg_de_subject_snp_dataset_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_de_subject_snp_dataset_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_de_subject_snp_dataset_id() RETURNS trigger
@@ -117,11 +117,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_de_subject_snp_dataset_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_de_subject_snp_dataset_id() OWNER TO deapp;
 
 --
 -- TOC entry 711 (class 1255 OID 24160)
--- Name: tf_trg_de_subject_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_de_subject_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_de_subject_sorted_def_id() RETURNS trigger
@@ -136,11 +136,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_de_subject_sorted_def_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_de_subject_sorted_def_id() OWNER TO deapp;
 
 --
 -- TOC entry 712 (class 1255 OID 24161)
--- Name: tf_trg_snp_data_by_patient_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_snp_data_by_patient_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_snp_data_by_patient_id() RETURNS trigger
@@ -155,11 +155,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_snp_data_by_patient_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_snp_data_by_patient_id() OWNER TO deapp;
 
 --
 -- TOC entry 640 (class 1255 OID 24162)
--- Name: tf_trg_snp_data_by_pprobe_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_snp_data_by_pprobe_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_snp_data_by_pprobe_id() RETURNS trigger
@@ -174,11 +174,11 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_snp_data_by_pprobe_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_snp_data_by_pprobe_id() OWNER TO deapp;
 
 --
 -- TOC entry 641 (class 1255 OID 24163)
--- Name: tf_trg_snp_subject_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: gustavo
+-- Name: tf_trg_snp_subject_sorted_def_id(); Type: FUNCTION; Schema: deapp; Owner: deapp
 --
 
 CREATE FUNCTION tf_trg_snp_subject_sorted_def_id() RETURNS trigger
@@ -193,7 +193,7 @@ end;
 $$;
 
 
-ALTER FUNCTION deapp.tf_trg_snp_subject_sorted_def_id() OWNER TO gustavo;
+ALTER FUNCTION deapp.tf_trg_snp_subject_sorted_def_id() OWNER TO deapp;
 
 SET default_tablespace = deapp;
 

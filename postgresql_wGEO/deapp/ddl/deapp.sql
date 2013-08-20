@@ -564,7 +564,8 @@ CREATE TABLE de_subject_microarray_data (
     raw_intensity double precision,
     log_intensity double precision,
     zscore double precision,
-    raw_intensity_4 double precision
+    raw_intensity_4 double precision,
+    partition_id numeric
 );
 
 
@@ -829,6 +830,13 @@ CREATE SEQUENCE seq_data_id
 
 ALTER TABLE deapp.seq_data_id OWNER TO deapp;
 
+CREATE SEQUENCE deapp.seq_mrna_partition_id
+	START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 20;
+ALTER TABLE deapp.seq_mrna_partition_id OWNER TO deapp;
 --
 -- TOC entry 3841 (class 2604 OID 25734)
 -- Name: region_id; Type: DEFAULT; Schema: deapp; Owner: deapp

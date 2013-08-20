@@ -1,6 +1,6 @@
-Folder postgres_complete includes create scripts for all necessary schemas
+Folder postgres_wGEO includes create scripts for all necessary schemas
 including i2b2 and ETL. It has the same data loaded as the db dump included in
-postgres_version folder. 
+postgres_wGEO_dump folder. 
 
 To create database:
 psql -h localhost -U postgres -d transmart -f create-transmart-db.sql

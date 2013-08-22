@@ -4,7 +4,7 @@
 
 CREATE OR REPLACE FUNCTION tm_cz.i2b2_backout_trial
 (trialid character varying, path_string character varying, currentjobid numeric)
-  RETURNS integer AS
+  RETURNS numeric AS
 $BODY$
 /*************************************************************************
 * Copyright 2008-2012 Janssen Research & Development, LLC.

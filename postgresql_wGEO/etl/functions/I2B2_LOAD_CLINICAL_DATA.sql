@@ -1007,7 +1007,7 @@ BEGIN
 		  ,c.sourcesystem_cd
 		  ,c.concept_cd
 		  ,'LIKE'	--'T'
-		  ,t.data_type  --'T'
+		  , 'T' --t.data_type
 		  ,'trial:' || TrialID 
 		  ,'@'
 		  ,case when t.data_type = 'T' then null

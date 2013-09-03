@@ -188,7 +188,7 @@ CREATE TABLE i2b2_tags (
 );
 
 
-ALTER TABLE i2b2metadata.i2b2_tags OWNER TO gustavo;
+ALTER TABLE i2b2metadata.i2b2_tags OWNER TO i2b2metadata;
 
 --
 -- TOC entry 389 (class 1259 OID 25194)

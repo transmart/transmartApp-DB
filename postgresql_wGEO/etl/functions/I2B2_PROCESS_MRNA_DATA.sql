@@ -986,7 +986,7 @@ BEGIN
     )
     select distinct m.patient_id
 		  ,m.concept_code
-		  ,'@'
+		  ,m.trial_name
 		  ,'T' -- Text data type
 		  ,'E'  --Stands for Equals for Text Types
 		  ,m.trial_name

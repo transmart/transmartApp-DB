@@ -47,8 +47,9 @@ BEGIN
 				   DATE_PART('minute', currTime - lastTime)) * 60 +
 				   DATE_PART('second', currTime - lastTime),0);
 
-	begin
-	insert 	into tm_cz.cz_job_audit
+	--begin
+		perform dblink('dbname=' || current_database(), '
+	insert into tm_cz.cz_job_audit
 	(job_id
 	,database_name
  	,procedure_name
@@ -59,26 +60,26 @@ BEGIN
     ,job_date
     ,time_elapsed_secs
 	)
-	values(
- 		jobId,
-		databaseName,
-		procedureName,
-		stepDesc,
-		recordsManipulated,
-		stepNumber,
-		stepStatus,
-		currTime,
-		elapsedSecs);
-	exception 
-	when OTHERS then
+	values('
+ 		|| jobId || ','
+		|| quote_literal(databaseName) || ','
+		|| quote_literal(procedureName) || ','
+		|| quote_literal(stepDesc) || ','
+		|| recordsManipulated || ','
+		|| stepNumber || ','
+		|| quote_literal(stepStatus) || ','
+		|| quote_literal(currTime) || ','
+		|| elapsedSecs || ');');
+		--exception 
+	--when OTHERS then
 		--raise notice 'proc failed state=%  errm=%', SQLSTATE, SQLERRM;
-		select tm_cz.cz_write_error(jobId,0,SQLSTATE,SQLERRM,null) into rtnCd;
-		return -16;
-	end;
+		--select tm_cz.cz_write_error(jobId,0,SQLSTATE,SQLERRM,null) into rtnCd;
+		--return -16;
+		--end;
 	
 	return 1;
 END;
 $$ LANGUAGE plpgsql
 security definer 
 -- set a secure search_path: trusted schema(s), then pg_temp
-set search_path=tm_cz, pg_temp;
+set search_path=tm_cz, public, pg_temp;

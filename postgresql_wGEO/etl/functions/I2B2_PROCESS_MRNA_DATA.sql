@@ -126,7 +126,7 @@ BEGIN
 		end if;
 	end if;
 
-	logBase := log_base;
+	logBase := coalesce(log_base, 2);
 	sourceCd := upper(coalesce(source_cd,'STD'));
 
 	--	Get count of records in tm_lz.lt_src_mrna_subj_samp_map
@@ -1076,10 +1076,11 @@ BEGIN
 	(probeset_id
 	,intensity_value
 	,assay_id
+	,trial_name
 	)
 	select gs.probeset_id
 		  ,avg(md.intensity_value::numeric(18,4))
-		  ,sd.assay_id
+		  ,sd.assay_id,TrialId
 	from deapp.de_subject_sample_mapping sd
 		,tm_lz.lt_src_mrna_data md
 		,tm_cz.probeset_deapp gs
@@ -1152,9 +1153,9 @@ BEGIN
 
 	--	insert into de_subject_microarray_data when dataType is T (transformed)
 
-	if dataType = 'T' then
-		sqlText := 'insert into ' || partitionName || ' (partition_id, probeset_id, assay_id, log_intensity, zscore) ' ||
-				   'select ' || partitionId::text || ', probeset_id, assay_id, intensity_value, ' ||
+	if dataType = 'T' or dataType = 'Z' then -- Z is for compatibility with TR ETL default settings
+		sqlText := 'insert into ' || partitionName || ' (partition_id, trial_name, probeset_id, assay_id, log_intensity, zscore) ' ||
+				   'select ' || partitionId::text || ', trial_name, probeset_id, assay_id, intensity_value, ' ||
 				   'case when intensity_value < -2.5 then -2.5 when intensity_value > 2.5 then 2.5 else intensity_value end ' ||
 				   'from tm_wz.wt_subject_mrna_probeset';
 		raise notice 'sqlText= %', sqlText;
@@ -1179,6 +1180,7 @@ BEGIN
 		,assay_id
 		,raw_intensity
 		,log_intensity
+		,trial_name
 		)
 		select probeset_id
 			  ,assay_id
@@ -1186,6 +1188,7 @@ BEGIN
 				    case when logBase = -1 then 0 else round(power(logBase,intensity_value),4) end
 			   end
 			  ,case when dataType = 'L' then intensity_value else log(logBase,intensity_value) end
+			  ,trial_name
 		from tm_wz.wt_subject_mrna_probeset;
 		get diagnostics rowCt := ROW_COUNT;
 		exception
@@ -1213,11 +1216,13 @@ BEGIN
 		,mean_intensity
 		,median_intensity
 		,stddev_intensity
+		,trial_name
 		)
 		select d.probeset_id
 			  ,avg(log_intensity)
 			  ,median(log_intensity)
 			  ,stddev(log_intensity)
+			  ,TrialID
 		from tm_wz.wt_subject_microarray_logs d
 		group by d.probeset_id;
 		get diagnostics rowCt := ROW_COUNT;
@@ -1240,8 +1245,8 @@ BEGIN
 
 		-- calculate zscore and insert into partition
 
-		sqlText := 'insert into ' || partitionName || ' (partition_id, probeset_id, assay_id, raw_intensity, log_intensity, zscore) ' ||
-				   'select ' || partitionId::text || ', d.probeset_id, d.assay_id, d.raw_intensity, d.log_intensity, ' ||
+		sqlText := 'insert into ' || partitionName || ' (partition_id, trial_name, probeset_id, assay_id, raw_intensity, log_intensity, zscore) ' ||
+				   'select ' || partitionId::text || ', d.trial_name, d.probeset_id, d.assay_id, d.raw_intensity, d.log_intensity, ' ||
 				   'case when c.stddev_intensity = 0 then 0 else ' ||
 				   'case when (d.log_intensity - c.median_intensity ) / c.stddev_intensity < -2.5 then -2.5 ' ||
 				   'when (d.log_intensity - c.median_intensity ) / c.stddev_intensity > 2.5 then 2.5 else ' ||

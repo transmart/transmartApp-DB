@@ -48,6 +48,8 @@ BEGIN
 				   DATE_PART('second', currTime - lastTime),0);
 
 	--begin
+	-- depending on your setup you may want one of the following dblink options:
+	-- perform dblink('host=localhost user=tm_cz password=tm_cz dbname=' || current_database(), '
 		perform dblink('dbname=' || current_database(), '
 	insert into tm_cz.cz_job_audit
 	(job_id

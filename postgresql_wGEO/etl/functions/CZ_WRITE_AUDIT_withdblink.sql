@@ -1,3 +1,5 @@
+create extension if not exists dblink with schema public;
+
 CREATE OR REPLACE FUNCTION tm_cz.CZ_WRITE_AUDIT
 (
 	jobId numeric,
@@ -49,7 +51,9 @@ BEGIN
 
 	--begin
 	-- depending on your setup you may want one of the following dblink options:
+	-- - tm_etl is not connecting as superuser:
 	-- perform dblink('host=localhost user=tm_cz password=tm_cz dbname=' || current_database(), '
+	-- - or if connecting as superuser:
 		perform dblink('dbname=' || current_database(), '
 	insert into tm_cz.cz_job_audit
 	(job_id

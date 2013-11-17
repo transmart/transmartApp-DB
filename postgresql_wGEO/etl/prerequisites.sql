@@ -9,6 +9,5 @@ alter schema tm_cz owner to tm_cz;
 alter schema tm_lz owner to tm_lz;
 alter schema tm_wz owner to tm_wz;
 
--- create extension if not exists dblink with schema public;
 
 

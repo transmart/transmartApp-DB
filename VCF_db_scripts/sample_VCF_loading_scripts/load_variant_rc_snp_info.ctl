@@ -1,0 +1,29 @@
+LOAD DATA
+INFILE 'load_variant_rc_snp_info.txt'
+   INTO TABLE DE_RC_SNP_INFO
+   FIELDS TERMINATED BY X'9'
+   TRAILING NULLCOLS
+   (
+    RS_ID,
+    REF,
+    ALT,
+    GENE_NAME,
+    ENTREZ_ID,
+    HG_VERSION,
+    VARIATION_CLASS,
+    STRAND,
+    CLINSIG,
+    DISEASE,
+    GMAF,
+    GENE_BIOTYPE,
+    IMPACT,
+    TRANSCRIPT_ID,
+    FUNCTIONAL_CLASS,
+    EFFECT,
+    EXON_ID,
+    AMINO_ACID_CHANGE,
+    CODON_CHANGE,
+    SNP_INFO_ID "DE_RC_SNP_INFO_SEQ.nextval"
+    )
+
+

@@ -1,0 +1,11 @@
+LOAD DATA
+INFILE 'load_variant_subject_idx.txt'
+   INTO TABLE DE_VARIANT_SUBJECT_IDX
+   FIELDS TERMINATED BY X'9'
+   (
+    DATASET_ID	,
+    SUBJECT_ID	,
+    POSITION	
+    )
+
+

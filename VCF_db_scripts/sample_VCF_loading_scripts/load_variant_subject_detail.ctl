@@ -1,0 +1,20 @@
+LOAD DATA
+INFILE 'load_variant_subject_detail.txt' "str '<EOF>\n'"
+   INTO TABLE DE_VARIANT_SUBJECT_DETAIL
+   FIELDS TERMINATED BY '<EOF>'
+   TRAILING NULLCOLS
+   (
+    DATASET_ID,
+    CHR,
+    POS,
+    RS_ID,
+    REF,
+    ALT,
+    QUAL,
+    FILTER,
+    INFO CHAR(4000),
+    FORMAT,
+    VARIANT_VALUE CHAR(200000) ENCLOSED BY '<startlob>' AND '<endlob>',
+    VARIANT_SUBJECT_DETAIL_ID  "DE_VARIANT_SUBJECT_DETAIL_SEQ.nextval"
+    )
+

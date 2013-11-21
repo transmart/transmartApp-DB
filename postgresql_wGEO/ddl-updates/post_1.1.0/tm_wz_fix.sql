@@ -1,4 +1,4 @@
-DROP TABLE tm_wz.tm_wz.wt_subject_mrna_data;
+DROP TABLE tm_wz.wt_subject_mrna_data;
 DROP TABLE tm_wz.wt_subject_microarray_med;
 DROP TABLE tm_wz.wt_subject_microarray_calcs;
 DROP TABLE tm_wz.wt_subject_microarray_logs;
